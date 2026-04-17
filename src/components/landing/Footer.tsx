@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => (
   <footer
     style={{
@@ -15,7 +17,7 @@ const Footer = () => (
 
         <div className="md:text-center">
           <ul className="space-y-2 text-sm">
-            <li><a href="/tools" className="opacity-80 hover:opacity-100 transition-opacity">Tools</a></li>
+            <li><Link to="/tools" className="opacity-80 hover:opacity-100 transition-opacity">Tools</Link></li>
             <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Contact</a></li>
             <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Privacy</a></li>
             <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Terms</a></li>
