@@ -1,4 +1,14 @@
 import { useMemo, useState } from "react";
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  ReferenceLine,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
@@ -8,6 +18,12 @@ const money = (n: number) =>
     currency: "USD",
     maximumFractionDigits: 0,
   }).format(Math.max(0, Math.round(n)));
+
+const compactMoney = (n: number) => {
+  if (Math.abs(n) >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
+  if (Math.abs(n) >= 1_000) return `$${Math.round(n / 1_000)}k`;
+  return `$${Math.round(n)}`;
+};
 
 type Field = {
   id: string;
@@ -70,20 +86,29 @@ const FireCalculator = () => {
     const r = returnRate / 100;
     const fiNumber = swr > 0 ? annualExpenses / swr : Number.POSITIVE_INFINITY;
 
+    const trajectory: Array<{ year: number; age: number; balance: number }> = [
+      { year: 0, age: currentAge, balance: Math.max(0, currentSavings) },
+    ];
     let balance = Math.max(0, currentSavings);
     let years = 0;
-    const cap = 80;
-    while (balance < fiNumber && years < cap) {
+    let reached = false;
+    const cap = 60;
+    while (years < cap) {
       balance = balance * (1 + r) + annualSavings;
       years += 1;
+      trajectory.push({ year: years, age: currentAge + years, balance });
+      if (!reached && balance >= fiNumber) {
+        reached = true;
+        break;
+      }
     }
-    const reached = balance >= fiNumber && Number.isFinite(fiNumber);
 
     return {
       fiNumber,
       years: reached ? years : null,
       ageAtFi: reached ? currentAge + years : null,
       monthlyIncomeAtFi: (fiNumber * swr) / 12,
+      trajectory,
     };
   }, [currentAge, currentSavings, annualSavings, annualExpenses, returnRate, withdrawalRate]);
 
@@ -94,24 +119,10 @@ const FireCalculator = () => {
 
   return (
     <div className="bg-background border border-rule border-t-[3px] border-t-accent-primary rounded-[4px] p-6 md:p-10 shadow-[0_12px_28px_rgba(28,26,23,0.06)]">
-      <p className="eyebrow text-accent-primary mb-3">Tool 01</p>
-      <h2 className="h2-display mb-3">FIRE Calculator</h2>
-      <p className="text-ink-secondary text-[15px] leading-relaxed mb-8">
-        Financial Independence, Retire Early. Enter your numbers and see the year the math actually
-        works.
-      </p>
-
       <div className="grid md:grid-cols-2 gap-10 md:gap-12">
         <div className="space-y-5">
-          <NumberField
-            id="fire-age"
-            label="Current Age"
-            value={currentAge}
-            onChange={setCurrentAge}
-            min={18}
-            max={80}
-            step={1}
-          />
+          <p className="eyebrow text-accent-primary">Your Inputs</p>
+          <NumberField id="fire-age" label="Current Age" value={currentAge} onChange={setCurrentAge} min={18} max={80} step={1} />
           <NumberField
             id="fire-savings"
             label="Current Savings / Investments"
@@ -186,12 +197,10 @@ const FireCalculator = () => {
               <div>
                 <p className="stat-label mb-1">Years to Financial Independence</p>
                 <p className="font-serif text-3xl md:text-4xl font-semibold text-accent-primary">
-                  {result.years !== null ? `${result.years} yrs` : "> 80 yrs"}
+                  {result.years !== null ? `${result.years} yrs` : "> 60 yrs"}
                 </p>
                 {result.ageAtFi !== null && (
-                  <p className="text-xs text-ink-muted mt-1">
-                    You hit FI around age {result.ageAtFi}
-                  </p>
+                  <p className="text-xs text-ink-muted mt-1">You hit FI around age {result.ageAtFi}</p>
                 )}
               </div>
 
@@ -211,11 +220,75 @@ const FireCalculator = () => {
               </div>
             </div>
           </div>
-          <p className="text-xs text-ink-muted mt-4 italic leading-relaxed">
-            Projection uses real (inflation-adjusted) returns. Assumes you keep saving at the same
-            pace and returns compound annually. Not financial advice.
-          </p>
         </div>
+      </div>
+
+      <div className="mt-10">
+        <div className="flex items-baseline justify-between mb-4">
+          <p className="eyebrow">Trajectory to FI</p>
+          <p className="text-xs text-ink-muted">Balance vs. year</p>
+        </div>
+        <div className="h-72 md:h-80 w-full bg-bg-elevated border border-rule rounded-[4px] p-3 md:p-4">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={result.trajectory} margin={{ top: 12, right: 20, bottom: 8, left: 4 }}>
+              <defs>
+                <linearGradient id="fireGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="hsl(var(--accent-primary))" stopOpacity={0.35} />
+                  <stop offset="100%" stopColor="hsl(var(--accent-primary))" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="2 4" stroke="hsl(var(--rule))" vertical={false} />
+              <XAxis
+                dataKey="year"
+                stroke="hsl(var(--ink-muted))"
+                tick={{ fontSize: 11 }}
+                tickMargin={6}
+                label={{ value: "Year", position: "insideBottom", offset: -2, fill: "hsl(var(--ink-muted))", fontSize: 11 }}
+              />
+              <YAxis
+                stroke="hsl(var(--ink-muted))"
+                tick={{ fontSize: 11 }}
+                tickFormatter={(n: number) => compactMoney(n)}
+                width={60}
+              />
+              <Tooltip
+                formatter={(v: number) => [money(v), "Balance"]}
+                labelFormatter={(y) => `Year ${y}`}
+                contentStyle={{
+                  background: "hsl(var(--background))",
+                  border: "1px solid hsl(var(--rule))",
+                  borderRadius: 4,
+                  fontSize: 12,
+                }}
+                labelStyle={{ color: "hsl(var(--ink-muted))", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em" }}
+              />
+              {Number.isFinite(result.fiNumber) && (
+                <ReferenceLine
+                  y={result.fiNumber}
+                  stroke="hsl(var(--accent-secondary))"
+                  strokeDasharray="4 4"
+                  label={{
+                    value: `FI ${compactMoney(result.fiNumber)}`,
+                    position: "right",
+                    fill: "hsl(var(--accent-secondary))",
+                    fontSize: 11,
+                  }}
+                />
+              )}
+              <Area
+                type="monotone"
+                dataKey="balance"
+                stroke="hsl(var(--accent-primary))"
+                strokeWidth={2}
+                fill="url(#fireGradient)"
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+        <p className="text-xs text-ink-muted mt-3 italic leading-relaxed">
+          Projection uses real (inflation-adjusted) returns. Assumes you keep saving at the same pace
+          and returns compound annually. Not financial advice.
+        </p>
       </div>
     </div>
   );
