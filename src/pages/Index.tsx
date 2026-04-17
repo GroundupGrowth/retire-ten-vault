@@ -1,16 +1,47 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from "@/components/landing/Hero";
+import TwoPaths from "@/components/landing/TwoPaths";
+import WhoFor from "@/components/landing/WhoFor";
+import Credibility from "@/components/landing/Credibility";
+import InsideBook from "@/components/landing/InsideBook";
+import Mechanism from "@/components/landing/Mechanism";
+import BonusStack from "@/components/landing/BonusStack";
+import StrategyCTA from "@/components/landing/StrategyCTA";
+import Objections from "@/components/landing/Objections";
+import FinalCTA from "@/components/landing/FinalCTA";
+import Footer from "@/components/landing/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    name: "Live Rich, Die Rich",
+    author: { "@type": "Person", name: "Barry Brooksby" },
+    offers: {
+      "@type": "Offer",
+      price: "19.97",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+    description:
+      "A 17-year real estate investor's playbook for retiring in 10 years — without the stock market, without a 401(k), and without waiting until 65.",
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Hero />
+      <TwoPaths />
+      <WhoFor />
+      <Credibility />
+      <InsideBook />
+      <Mechanism />
+      <BonusStack />
+      <StrategyCTA />
+      <Objections />
+      <FinalCTA />
+      <Footer />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
