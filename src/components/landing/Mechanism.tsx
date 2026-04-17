@@ -19,14 +19,14 @@ const Mechanism = () => (
         </p>
         <p>
           The rest is where people get stuck. Because underneath the asset, there has to be an
-          infrastructurea place to warehouse capital that stays liquid, compounds on its own,
+          infrastructure a place to warehouse capital that stays liquid, compounds on its own,
           and finances the next deal without asking a bank for permission.
         </p>
         <p>
           Barry calls it <em className="text-foreground not-italic font-medium">The Vault</em>.
           It's a 150-year-old financial structure that wealthy families have used for over a century,
           almost entirely outside public awareness. It is not a 401(k). It is not an IRA.
-          It is not a brokerage account. It is something betterand it's the reason 10 years
+          It is not a brokerage account. It is something better and it's the reason 10 years
           is a realistic timeline instead of a slogan.
         </p>
         <p>

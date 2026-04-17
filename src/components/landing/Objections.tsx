@@ -9,7 +9,7 @@ const items = [
   },
   {
     q: "What if I already invest in real estate?",
-    a: "Then you're further along than most readersand the Vault piece in Chapter 6 is probably the highest-leverage thing you'll read this year. Most real estate investors are missing it.",
+    a: "Then you're further along than most readers and the Vault piece in Chapter 6 is probably the highest-leverage thing you'll read this year. Most real estate investors are missing it.",
   },
 ];
 

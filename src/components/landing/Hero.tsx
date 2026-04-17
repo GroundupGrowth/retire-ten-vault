@@ -11,7 +11,6 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left column */}
           <div className="lg:col-span-6 order-1">
-            <p className="eyebrow mb-6">A New Playbook from a 17-Year Real Estate Investor</p>
             <h1 className="h1-display text-foreground mb-6">
               How to Retire in 10 Years{" "}
               <span className="text-accent-primary italic">Without</span> the Stock Market,{" "}
@@ -25,7 +24,7 @@ const Hero = () => {
             </p>
 
             <a href="#checkout" className="btn-primary mb-4">
-              Get the Book$19.97
+              Get the Book $19.97
             </a>
 
             <p className="micro-trust max-w-[32rem]">
@@ -34,7 +33,7 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Right columnvideo + book overlay */}
+          {/* Right column video + book overlay */}
           <div className="lg:col-span-6 order-2 relative">
             <div className="relative">
               <div className="relative aspect-video w-full overflow-hidden rounded-[4px] bg-foreground/90 border border-rule">
@@ -60,17 +59,17 @@ const Hero = () => {
                   </button>
                 ) : (
                   <iframe
-                    title="Barry Brooksbythe 2008 story"
+                    title="Barry Brooksby the 2008 story"
                     src="about:blank"
                     className="absolute inset-0 h-full w-full"
                   />
                 )}
               </div>
 
-              {/* Book cover overlaydesktop */}
+              {/* Book cover overlay desktop */}
               <img
                 src={bookCover}
-                alt="Live Rich, Die Richbook by Barry Brooksby"
+                alt="Live Rich, Die Rich book by Barry Brooksby"
                 width={400}
                 height={500}
                 className="hidden md:block absolute -bottom-8 -right-6 w-40 lg:w-48 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[3deg]"
@@ -78,7 +77,7 @@ const Hero = () => {
             </div>
 
             <p className="text-center mt-6 text-sm italic text-ink-muted">
-              Barry Brooksbythe 2008 story, in 90 seconds.
+              Barry Brooksby the 2008 story, in 90 seconds.
             </p>
 
             {/* Mobile book cover */}

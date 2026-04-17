@@ -1,3 +1,4 @@
+import TopBar from "@/components/landing/TopBar";
 import Hero from "@/components/landing/Hero";
 import TwoPaths from "@/components/landing/TwoPaths";
 import WhoFor from "@/components/landing/WhoFor";
@@ -23,12 +24,13 @@ const Index = () => {
       availability: "https://schema.org/InStock",
     },
     description:
-      "A 17-year real estate investor's playbook for retiring in 10 yearswithout the stock market, without a 401(k), and without waiting until 65.",
+      "A 17-year real estate investor's playbook for retiring in 10 years without the stock market, without a 401(k), and without waiting until 65.",
   };
 
   return (
     <main className="bg-background">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <TopBar />
       <Hero />
       <TwoPaths />
       <WhoFor />

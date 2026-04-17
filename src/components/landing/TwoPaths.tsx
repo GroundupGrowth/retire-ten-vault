@@ -9,7 +9,7 @@ const conventional = [
 const newPath = [
   "Build passive income that covers your life in 10 years or less.",
   "Own assets you actually control.",
-  "Access your capital when you need itnot when the IRS allows it.",
+  "Access your capital when you need it not when the IRS allows it.",
   "Keep more of what you make.",
   "Exit on your terms.",
 ];

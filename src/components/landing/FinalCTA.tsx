@@ -19,7 +19,7 @@ const FinalCTA = () => (
       </p>
 
       <a href="#checkout" className="btn-primary-inverted">
-        Get the Book$19.97
+        Get the Book $19.97
       </a>
 
       <p

@@ -31,7 +31,7 @@ const Credibility = () => (
           <div className="prose-body">
             <p>
               Barry Brooksby has been investing in real estate for 17 years. He started before 2008.
-              He lived through 2008. He kept buying after 2008when most of the people who'd been
+              He lived through 2008. He kept buying after 2008 when most of the people who'd been
               louder than him on the way up went quiet on the way down.
             </p>
             <p>
