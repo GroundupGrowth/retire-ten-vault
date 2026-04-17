@@ -22,13 +22,21 @@ const Mechanism = () => (
           infrastructure a place to warehouse capital that stays liquid, compounds on its own,
           and finances the next deal without asking a bank for permission.
         </p>
-        <p>
-          Barry calls it <em className="text-foreground not-italic font-medium">The Vault</em>.
+      </div>
+
+      <div className="mt-10 border-l-4 border-accent-primary bg-bg-elevated rounded-r-[4px] p-7 md:p-8">
+        <p className="eyebrow text-accent-primary mb-3">The Infrastructure Piece</p>
+        <p className="text-[17px] leading-relaxed text-ink-secondary">
+          Barry calls it{" "}
+          <span className="font-serif italic text-accent-primary font-medium">The Vault</span>.
           It's a 150-year-old financial structure that wealthy families have used for over a century,
           almost entirely outside public awareness. It is not a 401(k). It is not an IRA.
           It is not a brokerage account. It is something better and it's the reason 10 years
           is a realistic timeline instead of a slogan.
         </p>
+      </div>
+
+      <div className="prose-body mt-10">
         <p>
           The book walks you through exactly how it works, how it integrates with real estate,
           and how Barry uses it in his own portfolio today.

@@ -48,9 +48,16 @@ const BonusStack = () => (
         ))}
       </div>
 
-      <p className="pull-quote text-center mt-14 text-xl md:text-2xl text-ink-secondary">
-        Total value: $170. Yours today for $19.97.
-      </p>
+      <div className="mt-14 max-w-xl mx-auto bg-background border border-rule rounded-[4px] p-6 md:p-8 text-center">
+        <div className="flex items-baseline justify-center gap-3 mb-2">
+          <span className="stat-label text-ink-muted">Total value</span>
+          <span className="font-serif text-xl text-ink-muted line-through decoration-ink-muted/60">$170</span>
+        </div>
+        <div className="flex items-baseline justify-center gap-2">
+          <span className="stat-label text-accent-primary">Yours today for</span>
+          <span className="font-serif text-3xl md:text-4xl font-semibold text-accent-primary">$19.97</span>
+        </div>
+      </div>
 
       <div className="text-center mt-10">
         <a href="#checkout" className="btn-primary">

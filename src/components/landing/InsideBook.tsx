@@ -34,8 +34,10 @@ const InsideBook = () => (
               <li key={b} className="flex gap-4 text-[17px] leading-relaxed text-ink-secondary">
                 <span
                   aria-hidden
-                  className="mt-2.5 flex-shrink-0 inline-block w-2 h-2 bg-accent-primary"
-                />
+                  className="mt-0.5 flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-primary text-background text-[12px] font-bold leading-none"
+                >
+                  ✓
+                </span>
                 <span>{b}</span>
               </li>
             ))}

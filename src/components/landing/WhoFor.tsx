@@ -15,12 +15,19 @@ const WhoFor = () => (
           your advisor keeps handing you. You did the math on what your account actually has
           to hit to replace your income. And you noticed something.
         </p>
-        <p>
+      </div>
+
+      <blockquote className="my-10 border-l-4 border-accent-primary pl-6 md:pl-8">
+        <p className="pull-quote text-xl md:text-2xl text-foreground leading-snug">
           The math doesn't work. Not in 10 years. Not in 15. Probably not in 25 not without
           a bull market you can't count on and a life that doesn't surprise you.
         </p>
-        <p className="text-foreground font-medium" style={{ fontWeight: 500 }}>
-          If that's where you are, you don't need another spreadsheet. You need a different asset,
+      </blockquote>
+
+      <div className="bg-bg-elevated border border-rule rounded-[4px] p-7 md:p-8">
+        <p className="eyebrow text-accent-primary mb-3">If That's You</p>
+        <p className="text-[17px] text-foreground leading-relaxed" style={{ fontWeight: 500 }}>
+          You don't need another spreadsheet. You need a different asset,
           a different structure, and someone who's actually done it.
         </p>
       </div>

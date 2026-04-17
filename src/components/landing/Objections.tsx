@@ -22,15 +22,19 @@ const Objections = () => (
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-        {items.map((it) => (
+        {items.map((it, idx) => (
           <div
             key={it.q}
-            className="bg-background border border-rule rounded-[4px] p-8 flex flex-col"
+            className="relative bg-background border border-rule rounded-[4px] p-8 pt-10 flex flex-col"
           >
+            <span className="absolute -top-3 left-8 inline-flex items-center justify-center h-6 px-3 rounded-full bg-accent-primary text-background stat-label leading-none">
+              Q{idx + 1}
+            </span>
             <p className="pull-quote text-lg md:text-xl text-foreground leading-snug mb-5">
               "{it.q}"
             </p>
             <div className="hairline mb-5" />
+            <p className="eyebrow text-accent-primary mb-3">Answer</p>
             <p className="text-[15px] text-ink-secondary leading-relaxed">{it.a}</p>
           </div>
         ))}
