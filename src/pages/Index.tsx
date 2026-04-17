@@ -23,7 +23,7 @@ const Index = () => {
       availability: "https://schema.org/InStock",
     },
     description:
-      "A 17-year real estate investor's playbook for retiring in 10 years — without the stock market, without a 401(k), and without waiting until 65.",
+      "A 17-year real estate investor's playbook for retiring in 10 yearswithout the stock market, without a 401(k), and without waiting until 65.",
   };
 
   return (

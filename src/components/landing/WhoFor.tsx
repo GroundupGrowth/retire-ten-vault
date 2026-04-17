@@ -1,12 +1,12 @@
 const WhoFor = () => (
   <section className="section bg-background">
     <div className="container-prose">
-      <p className="eyebrow mb-6">Read This If —</p>
+      <p className="eyebrow mb-6">Read This If</p>
       <h2 className="h2-display mb-10">You've Already Run the Numbers. You Already Know.</h2>
 
       <div className="prose-body">
         <p>
-          You're over 35. You earn well. You've done the responsible things — maxed the 401(k),
+          You're over 35. You earn well. You've done the responsible thingsmaxed the 401(k),
           bought the house, stayed out of consumer debt.
         </p>
         <p>And somewhere in the last year or two, you ran the numbers.</p>
@@ -16,7 +16,7 @@ const WhoFor = () => (
           to hit to replace your income. And you noticed something.
         </p>
         <p>
-          The math doesn't work. Not in 10 years. Not in 15. Probably not in 25 — not without
+          The math doesn't work. Not in 10 years. Not in 15. Probably not in 25not without
           a bull market you can't count on and a life that doesn't surprise you.
         </p>
         <p className="text-foreground font-medium" style={{ fontWeight: 500 }}>

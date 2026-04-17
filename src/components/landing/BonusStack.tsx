@@ -1,7 +1,7 @@
 const cards = [
   {
     n: "01",
-    title: "The Book — Live Rich, Die Rich",
+    title: "The BookLive Rich, Die Rich",
     desc: "The full 17-year playbook, in print or digital.",
     value: "$24",
   },
@@ -54,7 +54,7 @@ const BonusStack = () => (
 
       <div className="text-center mt-10">
         <a href="#checkout" className="btn-primary">
-          Get the Book — $19.97
+          Get the Book$19.97
         </a>
       </div>
     </div>
