@@ -65,8 +65,10 @@ const Hero = () => {
                 ) : (
                   <iframe
                     title="Barry Brooksby the 2008 story"
-                    src="about:blank"
+                    src="https://www.tella.tv/video/vid_cmo7bdg7p02hd04lbdu1jgg4r/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
                     className="absolute inset-0 h-full w-full"
+                    allow="autoplay; fullscreen"
+                    allowTransparency
                   />
                 )}
               </div>
