@@ -9,8 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import NumberField from "@/components/tools/NumberField";
 
 const money = (n: number) =>
   new Intl.NumberFormat("en-US", {
@@ -24,54 +23,6 @@ const compactMoney = (n: number) => {
   if (Math.abs(n) >= 1_000) return `$${Math.round(n / 1_000)}k`;
   return `$${Math.round(n)}`;
 };
-
-type Field = {
-  id: string;
-  label: string;
-  hint?: string;
-  value: number;
-  onChange: (v: number) => void;
-  prefix?: string;
-  suffix?: string;
-  step?: number;
-  min?: number;
-  max?: number;
-};
-
-const NumberField = ({ id, label, hint, value, onChange, prefix, suffix, step, min, max }: Field) => (
-  <div>
-    <Label htmlFor={id} className="block mb-2 text-foreground font-sans text-sm font-medium">
-      {label}
-    </Label>
-    <div className="relative">
-      {prefix && (
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted text-sm select-none">
-          {prefix}
-        </span>
-      )}
-      <Input
-        id={id}
-        type="number"
-        inputMode="decimal"
-        value={Number.isFinite(value) ? value : ""}
-        onChange={(e) => {
-          const n = Number(e.target.value);
-          onChange(Number.isFinite(n) ? n : 0);
-        }}
-        step={step}
-        min={min}
-        max={max}
-        className={`h-11 bg-background border-rule focus-visible:ring-accent-primary ${prefix ? "pl-7" : ""} ${suffix ? "pr-10" : ""}`}
-      />
-      {suffix && (
-        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-muted text-sm select-none">
-          {suffix}
-        </span>
-      )}
-    </div>
-    {hint && <p className="mt-1.5 text-xs text-ink-muted">{hint}</p>}
-  </div>
-);
 
 const FireCalculator = () => {
   const [currentAge, setCurrentAge] = useState(35);
@@ -132,6 +83,7 @@ const FireCalculator = () => {
             prefix="$"
             step={1000}
             min={0}
+            max={2_000_000}
           />
           <NumberField
             id="fire-annual-savings"
@@ -142,6 +94,7 @@ const FireCalculator = () => {
             prefix="$"
             step={1000}
             min={0}
+            max={250_000}
           />
           <NumberField
             id="fire-expenses"
@@ -152,6 +105,7 @@ const FireCalculator = () => {
             prefix="$"
             step={1000}
             min={0}
+            max={250_000}
           />
           <div className="grid grid-cols-2 gap-4">
             <NumberField
@@ -160,9 +114,9 @@ const FireCalculator = () => {
               value={returnRate}
               onChange={setReturnRate}
               suffix="%"
-              step={0.1}
-              min={-20}
-              max={30}
+              step={0.25}
+              min={-5}
+              max={15}
             />
             <NumberField
               id="fire-swr"
@@ -171,8 +125,8 @@ const FireCalculator = () => {
               onChange={setWithdrawalRate}
               suffix="%"
               step={0.1}
-              min={0.5}
-              max={10}
+              min={2}
+              max={8}
             />
           </div>
         </div>

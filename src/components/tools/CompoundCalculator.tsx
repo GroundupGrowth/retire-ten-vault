@@ -9,8 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import NumberField from "@/components/tools/NumberField";
 
 const money = (n: number) =>
   new Intl.NumberFormat("en-US", {
@@ -24,54 +23,6 @@ const compactMoney = (n: number) => {
   if (Math.abs(n) >= 1_000) return `$${Math.round(n / 1_000)}k`;
   return `$${Math.round(n)}`;
 };
-
-type Field = {
-  id: string;
-  label: string;
-  hint?: string;
-  value: number;
-  onChange: (v: number) => void;
-  prefix?: string;
-  suffix?: string;
-  step?: number;
-  min?: number;
-  max?: number;
-};
-
-const NumberField = ({ id, label, hint, value, onChange, prefix, suffix, step, min, max }: Field) => (
-  <div>
-    <Label htmlFor={id} className="block mb-2 text-foreground font-sans text-sm font-medium">
-      {label}
-    </Label>
-    <div className="relative">
-      {prefix && (
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-muted text-sm select-none">
-          {prefix}
-        </span>
-      )}
-      <Input
-        id={id}
-        type="number"
-        inputMode="decimal"
-        value={Number.isFinite(value) ? value : ""}
-        onChange={(e) => {
-          const n = Number(e.target.value);
-          onChange(Number.isFinite(n) ? n : 0);
-        }}
-        step={step}
-        min={min}
-        max={max}
-        className={`h-11 bg-background border-rule focus-visible:ring-accent-secondary ${prefix ? "pl-7" : ""} ${suffix ? "pr-10" : ""}`}
-      />
-      {suffix && (
-        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-muted text-sm select-none">
-          {suffix}
-        </span>
-      )}
-    </div>
-    {hint && <p className="mt-1.5 text-xs text-ink-muted">{hint}</p>}
-  </div>
-);
 
 const CompoundCalculator = () => {
   const [principal, setPrincipal] = useState(10000);
@@ -120,6 +71,7 @@ const CompoundCalculator = () => {
             prefix="$"
             step={1000}
             min={0}
+            max={500_000}
           />
           <NumberField
             id="comp-monthly"
@@ -129,6 +81,7 @@ const CompoundCalculator = () => {
             prefix="$"
             step={50}
             min={0}
+            max={10_000}
           />
           <div className="grid grid-cols-2 gap-4">
             <NumberField
@@ -138,7 +91,7 @@ const CompoundCalculator = () => {
               onChange={setYears}
               step={1}
               min={1}
-              max={60}
+              max={50}
             />
             <NumberField
               id="comp-rate"
@@ -146,9 +99,9 @@ const CompoundCalculator = () => {
               value={rate}
               onChange={setRate}
               suffix="%"
-              step={0.1}
-              min={-20}
-              max={30}
+              step={0.25}
+              min={-5}
+              max={15}
             />
           </div>
         </div>
