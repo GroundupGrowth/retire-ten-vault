@@ -39,7 +39,7 @@ const Hero = () => (
             <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.18)]">
               <iframe
                 title="Barry Brooksby the 2008 story"
-                src="https://www.tella.tv/video/vid_cmo7bdg7p02hd04lbdu1jgg4r/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
+                src="https://www.tella.tv/video/vid_cmo7bsal3006z04l2f9w0fya1/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
                 className="absolute inset-0 h-full w-full"
                 allow="autoplay; fullscreen"
                 allowTransparency
