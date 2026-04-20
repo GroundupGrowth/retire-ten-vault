@@ -23,7 +23,12 @@ const Hero = () => {
               first time in <em>Live Rich, Die Rich</em>.
             </p>
 
-            <a href="#checkout" className="btn-primary mb-4">
+            <a
+              href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary mb-4"
+            >
               Get the Book $19.97
             </a>
 

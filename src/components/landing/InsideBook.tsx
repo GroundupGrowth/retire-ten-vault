@@ -43,7 +43,12 @@ const InsideBook = () => (
             ))}
           </ul>
 
-          <a href="#checkout" className="btn-primary">
+          <a
+            href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
             Get the Book $19.97
           </a>
         </div>

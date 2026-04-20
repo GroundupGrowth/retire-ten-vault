@@ -18,7 +18,12 @@ const FinalCTA = () => (
         The only question is what you own at the end of them.
       </p>
 
-      <a href="#checkout" className="btn-primary-inverted">
+      <a
+        href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-primary-inverted"
+      >
         Get the Book $19.97
       </a>
 
