@@ -33,10 +33,10 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Right column video + book overlay */}
+          {/* Right column vertical video + book overlay */}
           <div className="lg:col-span-6 order-2 relative">
-            <div className="relative">
-              <div className="relative aspect-video w-full overflow-hidden rounded-[4px] bg-foreground/90 border border-rule">
+            <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[320px]">
+              <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.18)]">
                 {!playing ? (
                   <button
                     type="button"
@@ -52,8 +52,8 @@ const Hero = () => {
                           "radial-gradient(ellipse at center, hsl(36 11% 26%) 0%, hsl(30 9% 10%) 75%)",
                       }}
                     />
-                    <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-background/95 transition-transform duration-300 group-hover:scale-105">
-                      <Play className="h-7 w-7 fill-accent-primary text-accent-primary ml-1" />
+                    <span className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-background/95 transition-transform duration-300 group-hover:scale-105">
+                      <Play className="h-6 w-6 sm:h-7 sm:w-7 fill-accent-primary text-accent-primary ml-1" />
                     </span>
                     <span className="sr-only">Play video</span>
                   </button>
@@ -66,13 +66,13 @@ const Hero = () => {
                 )}
               </div>
 
-              {/* Book cover overlay desktop */}
+              {/* Book cover overlay desktop only */}
               <img
                 src={bookCover}
                 alt="Live Rich, Die Rich book by Barry Brooksby"
                 width={400}
                 height={500}
-                className="hidden md:block absolute -bottom-8 -right-6 w-40 lg:w-48 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[3deg]"
+                className="hidden md:block absolute -bottom-10 -right-14 lg:-right-16 w-32 lg:w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[6deg]"
               />
             </div>
 
@@ -81,13 +81,13 @@ const Hero = () => {
             </p>
 
             {/* Mobile book cover */}
-            <div className="md:hidden flex justify-center mt-6">
+            <div className="md:hidden flex justify-center mt-8">
               <img
                 src={bookCover}
                 alt="Live Rich, Die Rich book cover"
                 width={400}
                 height={500}
-                className="w-44 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)]"
+                className="w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-3deg]"
               />
             </div>
           </div>
