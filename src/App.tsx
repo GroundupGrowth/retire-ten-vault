@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Test from "./pages/Test.tsx";
+import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import Tools from "./pages/Tools.tsx";
 import FireCalculatorPage from "./pages/tools/FireCalculatorPage.tsx";
 import CompoundCalculatorPage from "./pages/tools/CompoundCalculatorPage.tsx";
@@ -23,6 +25,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/tools/fire-calculator" element={<FireCalculatorPage />} />
           <Route path="/tools/compound-interest-calculator" element={<CompoundCalculatorPage />} />
