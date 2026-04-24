@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Flame, LineChart } from "lucide-react";
+import { ArrowRight, Compass, Flame, LineChart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import TopBar from "@/components/landing/TopBar";
 import Footer from "@/components/landing/Footer";
 
 type ToolCard = {
-  slug: string;
+  to: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -16,7 +16,17 @@ type ToolCard = {
 
 const tools: ToolCard[] = [
   {
-    slug: "fire-calculator",
+    to: "/quiz",
+    eyebrow: "Quiz",
+    title: "Journey Quiz",
+    description:
+      "Five questions, two minutes. You'll land on one of five stages — Foundation to At-FI — with stage-specific next moves and the chapter of the book to open first.",
+    meta: "5 questions · personalized result",
+    icon: Compass,
+    accent: "primary",
+  },
+  {
+    to: "/tools/fire-calculator",
     eyebrow: "Tool 01",
     title: "FIRE Calculator",
     description:
@@ -26,7 +36,7 @@ const tools: ToolCard[] = [
     accent: "primary",
   },
   {
-    slug: "compound-interest-calculator",
+    to: "/tools/compound-interest-calculator",
     eyebrow: "Tool 02",
     title: "Compound Interest Calculator",
     description:
@@ -74,8 +84,8 @@ const Tools = () => (
             const s = accentStyles[t.accent];
             return (
               <Link
-                key={t.slug}
-                to={`/tools/${t.slug}`}
+                key={t.to}
+                to={t.to}
                 className={`group relative flex flex-col bg-background border border-rule border-t-[3px] ${s.border} rounded-[4px] p-8 md:p-10 transition-shadow hover:shadow-[0_14px_36px_rgba(28,26,23,0.10)]`}
               >
                 <div

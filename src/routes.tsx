@@ -4,6 +4,7 @@ import Index from "./pages/Index";
 import Test from "./pages/Test";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import FiQuiz from "./pages/FiQuiz";
 import Tools from "./pages/Tools";
 import FireCalculatorPage from "./pages/tools/FireCalculatorPage";
 import CompoundCalculatorPage from "./pages/tools/CompoundCalculatorPage";
@@ -27,6 +28,7 @@ export const routes: RouteRecord[] = [
         getStaticPaths: () => blogPosts.map((p) => `/blog/${p.slug}`),
       },
       { path: "tools", element: <Tools />, entry: "src/pages/Tools.tsx" },
+      { path: "quiz", element: <FiQuiz />, entry: "src/pages/FiQuiz.tsx" },
       {
         path: "tools/fire-calculator",
         element: <FireCalculatorPage />,
