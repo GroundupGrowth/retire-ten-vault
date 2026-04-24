@@ -94,7 +94,12 @@ const QuizResultView = ({ stage, score, onRetake }: Props) => {
         </p>
       </div>
 
-      <p className="lede mb-10">{s.summary}</p>
+      <p className="lede mb-8">{s.summary}</p>
+
+      <div className="flex flex-wrap gap-4 mb-12 pb-10 border-b border-rule">
+        <PrimaryCta />
+        <SecondaryCta />
+      </div>
 
       <div className="border-l-4 border-accent-primary bg-bg-elevated rounded-r-[4px] p-6 md:p-8 mb-12">
         <p className="eyebrow text-accent-primary mb-3">The Math at This Stage</p>
