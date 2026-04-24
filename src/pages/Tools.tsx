@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Compass, Flame, LineChart } from "lucide-react";
+import { ArrowRight, Compass, Flame, LineChart, Wallet } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import TopBar from "@/components/landing/TopBar";
 import Footer from "@/components/landing/Footer";
@@ -44,6 +44,16 @@ const tools: ToolCard[] = [
     meta: "4 inputs · chart + table",
     icon: LineChart,
     accent: "secondary",
+  },
+  {
+    to: "/tools/401k-true-cost-calculator",
+    eyebrow: "Tool 03",
+    title: "401(k) True Cost Calculator",
+    description:
+      "What the brochure doesn't say: plan fees plus the marginal-rate tax event on withdrawal. See the gap between the gross projection and what you actually keep.",
+    meta: "6 inputs · chart + breakdown",
+    icon: Wallet,
+    accent: "primary",
   },
 ];
 

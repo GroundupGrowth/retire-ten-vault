@@ -11,6 +11,7 @@ import FiQuiz from "./pages/FiQuiz.tsx";
 import Tools from "./pages/Tools.tsx";
 import FireCalculatorPage from "./pages/tools/FireCalculatorPage.tsx";
 import CompoundCalculatorPage from "./pages/tools/CompoundCalculatorPage.tsx";
+import FourOhOneKCalculatorPage from "./pages/tools/FourOhOneKCalculatorPage.tsx";
 import ThankYou from "./pages/ThankYou.tsx";
 import BookThankYou from "./pages/BookThankYou.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/tools" element={<Tools />} />
           <Route path="/tools/fire-calculator" element={<FireCalculatorPage />} />
           <Route path="/tools/compound-interest-calculator" element={<CompoundCalculatorPage />} />
+          <Route path="/tools/401k-true-cost-calculator" element={<FourOhOneKCalculatorPage />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/book-thank-you" element={<BookThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
