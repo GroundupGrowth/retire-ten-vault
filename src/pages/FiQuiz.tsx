@@ -1,8 +1,10 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Compass } from "lucide-react";
 import TopBar from "@/components/landing/TopBar";
 import Footer from "@/components/landing/Footer";
+import QuizResultView from "@/components/tools/QuizResultView";
+import { scoreToStage } from "@/data/journeyStages";
 
 type SingleQuestion = {
   id: string;
@@ -89,122 +91,11 @@ const questions: Question[] = [
   },
 ];
 
-type StageKey = "foundation" | "building" | "accelerating" | "glide" | "fi";
-
-const stages: Record<
-  StageKey,
-  {
-    badge: string;
-    title: string;
-    summary: string;
-    nextSteps: string[];
-    chapter: string;
-    primaryCta: { label: string; href: string; external?: boolean };
-    secondaryCta?: { label: string; to: string };
-  }
-> = {
-  foundation: {
-    badge: "Stage 01",
-    title: "The Foundation",
-    summary:
-      "You're early — which is the best news you could get on a page like this. Ten years is plausible if you build the system before you build the pile.",
-    nextSteps: [
-      "Lock a savings rate you can actually sustain (not just max-out a 401(k)).",
-      "Pick your first income-producing asset and learn it cold before you add a second.",
-      "Set up the infrastructure piece now, before you have capital to park in it.",
-    ],
-    chapter: "Chapter 1 — The Retire-in-10 Setup",
-    primaryCta: {
-      label: "Get the Book $19.97",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
-      external: true,
-    },
-    secondaryCta: { label: "Run your numbers →", to: "/tools/fire-calculator" },
-  },
-  building: {
-    badge: "Stage 02",
-    title: "Building",
-    summary:
-      "You've got momentum. Capital is accumulating. The question now is whether it's going into the right place with the right structure underneath.",
-    nextSteps: [
-      "Audit what you own vs. what actually produces income.",
-      "Fix the infrastructure piece before the next big deposit lands.",
-      "Stop adding new asset classes until the existing ones are paying.",
-    ],
-    chapter: "Chapter 3 — Picking the Right Asset, then Chapter 6 — The Vault",
-    primaryCta: {
-      label: "Get the Book $19.97",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
-      external: true,
-    },
-    secondaryCta: { label: "Run your numbers →", to: "/tools/fire-calculator" },
-  },
-  accelerating: {
-    badge: "Stage 03",
-    title: "Accelerating",
-    summary:
-      "You've got capital. The question isn't whether you'll get there — it's how much of the next decade you spend waiting vs. deploying.",
-    nextSteps: [
-      "Read Chapter 6 before anything else. The Vault is the piece you're most likely missing.",
-      "Inventory your deal pipeline and your reserve position against it. Gap = missed years.",
-      "Pressure-test your 10-year plan with someone who's done it, not just planned it.",
-    ],
-    chapter: "Chapter 6 — The Vault, then Chapter 4 — The 10-Minute Deal Filter",
-    primaryCta: {
-      label: "Get the Book $19.97",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
-      external: true,
-    },
-    secondaryCta: { label: "Book a strategy session →", to: "/#strategy-call" },
-  },
-  glide: {
-    badge: "Stage 04",
-    title: "On the Glide Path",
-    summary:
-      "You're close. The job shifts from growing the pile to protecting it, tax-optimizing it, and deciding what comes next.",
-    nextSteps: [
-      "Model your withdrawal strategy, not just your accumulation strategy.",
-      "Tax positioning beats one more deal at this stage.",
-      "Start making legacy and structure decisions before you're forced to.",
-    ],
-    chapter: "Chapter 7 — Decumulation & Taxes",
-    primaryCta: {
-      label: "Get the Book $19.97",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
-      external: true,
-    },
-    secondaryCta: { label: "Talk to Barry →", to: "/#strategy-call" },
-  },
-  fi: {
-    badge: "Stage 05",
-    title: "At Financial Independence",
-    summary:
-      "You made it. The work now is tax efficiency, legacy structure, and pressure-testing that the system holds through the next 20 years, not just the last 20.",
-    nextSteps: [
-      "Legacy structure beats last-mile return chasing.",
-      "Your Vault should be doing double duty now — liquidity and inheritance.",
-      "Most readers at this stage benefit more from a session than the book.",
-    ],
-    chapter: "Chapter 8 — Legacy & the Long Vault",
-    primaryCta: {
-      label: "Book a strategy session",
-      href: "#strategy-call",
-    },
-    secondaryCta: { label: "Still want the book? Get it $19.97 →", to: "/" },
-  },
-};
-
-const scoreToStage = (score: number): StageKey => {
-  if (score <= 15) return "foundation";
-  if (score <= 40) return "building";
-  if (score <= 65) return "accelerating";
-  if (score <= 85) return "glide";
-  return "fi";
-};
-
 const FiQuiz = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(-1);
   const [answers, setAnswers] = useState<Record<string, string | string[]>>({});
+  const [submitted, setSubmitted] = useState<{ stage: ReturnType<typeof scoreToStage>; score: number } | null>(null);
 
   const currentQuestion = step >= 0 && step < questions.length ? questions[step] : null;
   const currentAnswer = currentQuestion ? answers[currentQuestion.id] : undefined;
@@ -214,7 +105,7 @@ const FiQuiz = () => {
       : typeof currentAnswer === "string" && currentAnswer.length > 0
     : false;
 
-  const { stage, score } = useMemo(() => {
+  const score = useMemo(() => {
     let s = 0;
     for (const q of questions) {
       if (q.kind !== "single") continue;
@@ -223,7 +114,7 @@ const FiQuiz = () => {
       const opt = q.options.find((o) => o.id === a);
       if (opt) s += opt.points;
     }
-    return { stage: scoreToStage(s), score: s };
+    return s;
   }, [answers]);
 
   const setSingle = (questionId: string, optionId: string) =>
@@ -241,6 +132,17 @@ const FiQuiz = () => {
   const reset = () => {
     setAnswers({});
     setStep(-1);
+    setSubmitted(null);
+  };
+
+  const handleNext = () => {
+    if (step === questions.length - 1) {
+      const stage = scoreToStage(score);
+      setSubmitted({ stage, score });
+      navigate(`/quiz/result/${stage}?score=${score}`, { replace: false });
+    } else {
+      setStep((s) => s + 1);
+    }
   };
 
   return (
@@ -248,7 +150,7 @@ const FiQuiz = () => {
       <TopBar />
       <section className="section">
         <div className="container-prose">
-          {step === -1 && (
+          {step === -1 && !submitted && (
             <div>
               <div className="mb-10 inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-primary/10 text-accent-primary">
                 <Compass className="h-6 w-6" />
@@ -256,42 +158,31 @@ const FiQuiz = () => {
               <p className="eyebrow text-accent-primary mb-6">The Journey Quiz</p>
               <h1 className="h1-display mb-6">Where Are You on the Path to Financial Independence?</h1>
               <p className="lede mb-10">
-                Five questions, about two minutes. You'll land on one of five stages — from just
-                starting out to already-there — with a specific next step, the chapter of the book
-                to start with, and whether a strategy session would help more than the book at this
-                point.
+                Five questions, about two minutes. You'll land on one of five stages — from
+                Foundation to already-there — with a written 30/60/90-day plan, the pitfalls
+                everyone hits at your stage, and the chapter of the book to open first.
               </p>
 
               <div className="bg-bg-elevated border border-rule rounded-[4px] p-6 md:p-8 mb-10">
                 <p className="eyebrow text-ink-muted mb-3">What You'll Get</p>
                 <ul className="space-y-3 text-[16px] text-ink-secondary leading-relaxed">
-                  <li className="flex gap-3">
-                    <span
-                      aria-hidden
-                      className="mt-0.5 flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-primary text-background text-[12px] font-bold leading-none"
-                    >
-                      ✓
-                    </span>
-                    <span>Your current stage on the 10-year path.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span
-                      aria-hidden
-                      className="mt-0.5 flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-primary text-background text-[12px] font-bold leading-none"
-                    >
-                      ✓
-                    </span>
-                    <span>Three next moves that match the stage — not generic advice.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span
-                      aria-hidden
-                      className="mt-0.5 flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-primary text-background text-[12px] font-bold leading-none"
-                    >
-                      ✓
-                    </span>
-                    <span>Which chapter of <em>Live Rich, Die Rich</em> to open first.</span>
-                  </li>
+                  {[
+                    "Your current stage and what the math actually looks like there.",
+                    "Three next moves matched to the stage, not generic advice.",
+                    "A 30 / 60 / 90 day starter plan with specific actions.",
+                    "Common pitfalls at your stage and what unlocks the next one.",
+                    "Which chapter of Live Rich, Die Rich to open first.",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span
+                        aria-hidden
+                        className="mt-0.5 flex-shrink-0 inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent-primary text-background text-[12px] font-bold leading-none"
+                      >
+                        ✓
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -302,7 +193,7 @@ const FiQuiz = () => {
             </div>
           )}
 
-          {currentQuestion && (
+          {currentQuestion && !submitted && (
             <div>
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-3">
@@ -346,9 +237,7 @@ const FiQuiz = () => {
                           <span
                             aria-hidden
                             className={`flex-shrink-0 h-5 w-5 rounded-full border-2 transition-colors ${
-                              selected
-                                ? "border-accent-primary bg-accent-primary"
-                                : "border-rule"
+                              selected ? "border-accent-primary bg-accent-primary" : "border-rule"
                             }`}
                           />
                           <span
@@ -409,7 +298,7 @@ const FiQuiz = () => {
                 <button
                   type="button"
                   disabled={!canAdvance}
-                  onClick={() => setStep((s) => s + 1)}
+                  onClick={handleNext}
                   className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   {step === questions.length - 1 ? "See My Stage" : "Next"}
@@ -419,76 +308,8 @@ const FiQuiz = () => {
             </div>
           )}
 
-          {step === questions.length && (
-            <div>
-              {(() => {
-                const result = stages[stage];
-                return (
-                  <div>
-                    <p className="eyebrow text-accent-primary mb-4">{result.badge}</p>
-                    <h1 className="h1-display mb-6">You're at: {result.title}</h1>
-                    <p className="lede mb-10">{result.summary}</p>
-
-                    <div className="bg-bg-elevated border border-rule border-t-[3px] border-t-accent-primary rounded-[4px] p-7 md:p-10 mb-10 shadow-[0_12px_28px_rgba(28,26,23,0.06)]">
-                      <p className="eyebrow text-accent-primary mb-5">What to Do Next</p>
-                      <ol className="space-y-5">
-                        {result.nextSteps.map((s, i) => (
-                          <li key={s} className="flex gap-4 text-[17px] text-ink-secondary leading-relaxed">
-                            <span
-                              aria-hidden
-                              className="mt-0.5 flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent-primary text-background font-serif text-sm font-semibold leading-none"
-                            >
-                              {i + 1}
-                            </span>
-                            <span>{s}</span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-
-                    <div className="border-l-4 border-accent-primary bg-background pl-5 py-3 mb-10">
-                      <p className="stat-label text-ink-muted mb-1">Start Here in the Book</p>
-                      <p className="font-serif text-lg md:text-xl text-foreground">{result.chapter}</p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-4 mb-10">
-                      {result.primaryCta.external ? (
-                        <a
-                          href={result.primaryCta.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-primary"
-                        >
-                          {result.primaryCta.label}
-                        </a>
-                      ) : (
-                        <a href={result.primaryCta.href} className="btn-primary">
-                          {result.primaryCta.label}
-                        </a>
-                      )}
-                      {result.secondaryCta && (
-                        <Link to={result.secondaryCta.to} className="btn-secondary">
-                          {result.secondaryCta.label}
-                        </Link>
-                      )}
-                    </div>
-
-                    <div className="flex items-center justify-between pt-6 border-t border-rule">
-                      <button
-                        type="button"
-                        onClick={reset}
-                        className="text-sm text-ink-muted hover:text-foreground transition-colors"
-                      >
-                        Retake the quiz
-                      </button>
-                      <p className="text-xs text-ink-muted">
-                        Score: {score} · Stage: {result.title}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })()}
-            </div>
+          {submitted && (
+            <QuizResultView stage={submitted.stage} score={submitted.score} onRetake={reset} />
           )}
         </div>
       </section>

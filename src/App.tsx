@@ -8,6 +8,8 @@ import Test from "./pages/Test.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import FiQuiz from "./pages/FiQuiz.tsx";
+import QuizResult from "./pages/QuizResult.tsx";
+import JourneyResults from "./pages/JourneyResults.tsx";
 import Tools from "./pages/Tools.tsx";
 import FireCalculatorPage from "./pages/tools/FireCalculatorPage.tsx";
 import CompoundCalculatorPage from "./pages/tools/CompoundCalculatorPage.tsx";
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/quiz" element={<FiQuiz />} />
+          <Route path="/quiz/result/:stage" element={<QuizResult />} />
+          <Route path="/journeyresults" element={<JourneyResults />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/tools/fire-calculator" element={<FireCalculatorPage />} />
           <Route path="/tools/compound-interest-calculator" element={<CompoundCalculatorPage />} />
