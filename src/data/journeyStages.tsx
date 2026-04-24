@@ -132,7 +132,7 @@ export const stages: Record<StageKey, Stage> = {
     ],
     primaryCta: {
       label: "Book a Strategy Session",
-      href: "/#strategy-call",
+      href: "#book-call",
     },
     secondaryCta: {
       label: "Still want the book? Get it $19.97 →",
@@ -176,7 +176,7 @@ export const stages: Record<StageKey, Stage> = {
     ],
     primaryCta: {
       label: "Book a Strategy Session",
-      href: "/#strategy-call",
+      href: "#book-call",
     },
     secondaryCta: {
       label: "Still want the book? Get it $19.97 →",
@@ -217,7 +217,7 @@ export const stages: Record<StageKey, Stage> = {
     relatedSlugs: ["infrastructure-piece-most-investors-dont-see"],
     primaryCta: {
       label: "Book a Strategy Session",
-      href: "/#strategy-call",
+      href: "#book-call",
     },
     secondaryCta: { label: "Back to the book →", to: "/" },
   },

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BookingDialog from "@/components/booking/BookingDialog";
 import { blogPosts } from "@/data/blogPosts";
 import { stageOrder, stages, type StageKey } from "@/data/journeyStages";
 
@@ -19,6 +20,15 @@ const QuizResultView = ({ stage, score, onRetake }: Props) => {
     .filter(Boolean) as typeof blogPosts;
 
   const PrimaryCta = () => {
+    if (s.primaryCta.href === "#book-call") {
+      return (
+        <BookingDialog>
+          <button type="button" className="btn-primary">
+            {s.primaryCta.label}
+          </button>
+        </BookingDialog>
+      );
+    }
     if (s.primaryCta.external) {
       return (
         <a
@@ -46,6 +56,15 @@ const QuizResultView = ({ stage, score, onRetake }: Props) => {
   };
 
   const SecondaryCta = () => {
+    if (s.secondaryCta.href === "#book-call") {
+      return (
+        <BookingDialog>
+          <button type="button" className="btn-secondary">
+            {s.secondaryCta.label}
+          </button>
+        </BookingDialog>
+      );
+    }
     if (s.secondaryCta.to) {
       return (
         <Link to={s.secondaryCta.to} className="btn-secondary">

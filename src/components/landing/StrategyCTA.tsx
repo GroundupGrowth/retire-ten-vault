@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import BookingDialog from "@/components/booking/BookingDialog";
 
 const StrategyCTA = () => (
   <section id="strategy-call" className="section bg-background">
@@ -14,22 +14,11 @@ const StrategyCTA = () => (
           whether a 10-year plan is realistic for you.
         </p>
 
-        <Dialog>
-          <DialogTrigger asChild>
-            <button type="button" className="btn-secondary">
-              Book a Strategy Session with Barry
-            </button>
-          </DialogTrigger>
-          <DialogContent className="max-w-4xl w-[95vw] p-0 overflow-hidden sm:rounded-lg bg-background">
-            <DialogTitle className="sr-only">Book a Strategy Session with Barry Brooksby</DialogTitle>
-            <iframe
-              src="https://api.leadconnectorhq.com/widget/bookings/insuranceandestates/barrybrooksby"
-              title="Book a strategy session with Barry Brooksby"
-              className="w-full h-[85vh] max-h-[820px] border-0"
-              loading="lazy"
-            />
-          </DialogContent>
-        </Dialog>
+        <BookingDialog>
+          <button type="button" className="btn-secondary">
+            Book a Strategy Session with Barry
+          </button>
+        </BookingDialog>
 
         <p className="micro-trust mt-4 italic">30 minutes. No cost. No obligation.</p>
       </div>
