@@ -1,5 +1,7 @@
-import barry from "@/assets/barry-headshot.jpg";
 import TrustpilotWidget from "@/components/trust/TrustpilotWidget";
+
+const BARRY_PHOTO =
+  "https://www.insuranceandestates.com/wp-content/uploads/Barry-1-2.webp";
 
 const stats = [
   { num: "17 Years", label: "investing through a full real estate cycle" },
@@ -16,7 +18,7 @@ const Credibility = () => (
           <div className="relative max-w-[400px] mx-auto md:mx-0">
             <div className="absolute inset-0 translate-x-3 translate-y-3 bg-accent-primary/10 rounded-[4px]" />
             <img
-              src={barry}
+              src={BARRY_PHOTO}
               alt="Barry Brooksby, author and 17-year real estate investor"
               width={800}
               height={800}
