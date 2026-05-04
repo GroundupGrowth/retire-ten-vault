@@ -10,6 +10,7 @@ import StrategyCTA from "@/components/landing/StrategyCTA";
 import Objections from "@/components/landing/Objections";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
+import TrustStrip from "@/components/trust/TrustStrip";
 
 const Book = () => {
   const jsonLd = {
@@ -43,6 +44,7 @@ const Book = () => {
       <BonusStack />
       <StrategyCTA />
       <Objections />
+      <TrustStrip eyebrow="Trusted by Real Readers" />
       <FinalCTA ctaMode="buy" />
       <Footer />
     </main>

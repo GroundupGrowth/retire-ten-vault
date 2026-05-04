@@ -1,4 +1,5 @@
 import barry from "@/assets/barry-headshot.jpg";
+import TrustpilotWidget from "@/components/trust/TrustpilotWidget";
 
 const stats = [
   { num: "17 Years", label: "investing through a full real estate cycle" },
@@ -55,6 +56,10 @@ const Credibility = () => (
           ))}
         </div>
         <div className="hairline" />
+        <div className="pt-10 md:pt-12">
+          <p className="eyebrow text-center mb-6 text-ink-muted">What Clients Are Saying</p>
+          <TrustpilotWidget />
+        </div>
       </div>
     </div>
   </section>

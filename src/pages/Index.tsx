@@ -10,6 +10,7 @@ import StrategyCTA from "@/components/landing/StrategyCTA";
 import Objections from "@/components/landing/Objections";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
+import TrustStrip from "@/components/trust/TrustStrip";
 
 const Index = () => (
   <main className="bg-background">
@@ -23,6 +24,7 @@ const Index = () => (
     <BonusStack />
     <StrategyCTA />
     <Objections />
+    <TrustStrip eyebrow="Trusted by Real Readers" />
     <FinalCTA ctaMode="call" />
     <Footer />
   </main>
