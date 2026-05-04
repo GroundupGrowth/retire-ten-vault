@@ -28,20 +28,17 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
           <span className="text-accent-primary italic">Without</span> a 401(k), and{" "}
           <span className="text-accent-primary italic">Without</span> Waiting Until You're 65
         </h1>
-        <div className="flex justify-center mb-6">
-          <div className="w-full max-w-sm">
-            <TrustpilotWidget
-              templateId="5419b6a8b0d04a076446a9ad"
-              height="24px"
-              width="100%"
-            />
-          </div>
-        </div>
         <p className="lede">
           The portfolio, the framework, and the infrastructure piece nobody told you about.
           Built through the 2008 crash. Stress-tested through 17 years. Written down for the
           first time in <em>Live Rich, Die Rich</em>.
         </p>
+      </div>
+
+      <div className="flex justify-center mb-10 md:mb-12">
+        <div className="w-full max-w-md">
+          <TrustpilotWidget />
+        </div>
       </div>
 
       <div className="mx-auto w-full max-w-4xl mb-10 md:mb-14">
