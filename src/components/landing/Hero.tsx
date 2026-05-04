@@ -33,27 +33,16 @@ const Hero = () => (
           </p>
         </div>
 
-        {/* Right column landscape video + book overlay */}
-        <div className="lg:col-span-6 order-2 relative">
-          <div className="relative w-full">
-            <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.18)]">
-              <iframe
-                title="Barry Brooksby the 2008 story"
-                src="https://www.tella.tv/video/vid_cmorbvz5t00ye04i286li9168/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
-                className="absolute inset-0 h-full w-full"
-                allow="autoplay; fullscreen"
-                allowTransparency
-                loading="lazy"
-              />
-            </div>
-
-            {/* Book cover overlay desktop only */}
-            <img
-              src={bookCover}
-              alt="Live Rich, Die Rich book by Barry Brooksby"
-              width={400}
-              height={500}
-              className="hidden md:block absolute -bottom-10 -right-6 lg:-right-10 w-28 lg:w-36 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[6deg]"
+        {/* Right column landscape video + book below */}
+        <div className="lg:col-span-6 order-2">
+          <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.18)]">
+            <iframe
+              title="Barry Brooksby the 2008 story"
+              src="https://www.tella.tv/video/vid_cmorbvz5t00ye04i286li9168/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
+              className="absolute inset-0 h-full w-full"
+              allow="autoplay; fullscreen"
+              allowTransparency
+              loading="lazy"
             />
           </div>
 
@@ -61,14 +50,13 @@ const Hero = () => (
             Barry Brooksby the 2008 story, in 90 seconds.
           </p>
 
-          {/* Mobile book cover */}
-          <div className="md:hidden flex justify-center mt-8">
+          <div className="flex justify-center md:justify-end mt-8">
             <img
               src={bookCover}
-              alt="Live Rich, Die Rich book cover"
+              alt="Live Rich, Die Rich book by Barry Brooksby"
               width={400}
               height={500}
-              className="w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-3deg]"
+              className="w-36 md:w-32 lg:w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-3deg] md:rotate-[6deg]"
             />
           </div>
         </div>

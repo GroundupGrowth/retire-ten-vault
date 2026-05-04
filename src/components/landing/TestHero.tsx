@@ -16,7 +16,7 @@ const TestHero = () => (
         </p>
       </div>
 
-      <div className="relative mx-auto w-full max-w-3xl mb-10 md:mb-12">
+      <div className="mx-auto w-full max-w-3xl mb-10 md:mb-12">
         <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.22)]">
           <iframe
             title="Barry Brooksby the 2008 story"
@@ -27,15 +27,6 @@ const TestHero = () => (
             loading="lazy"
           />
         </div>
-
-        {/* Book cover overlay desktop only */}
-        <img
-          src={bookCover}
-          alt="Live Rich, Die Rich book by Barry Brooksby"
-          width={400}
-          height={500}
-          className="hidden md:block absolute -bottom-10 -right-8 lg:-right-12 w-32 lg:w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[6deg]"
-        />
       </div>
 
       <div className="text-center">
@@ -54,14 +45,13 @@ const TestHero = () => (
         </p>
       </div>
 
-      {/* Mobile book cover */}
-      <div className="md:hidden flex justify-center mt-10">
+      <div className="flex justify-center mt-12">
         <img
           src={bookCover}
           alt="Live Rich, Die Rich book cover"
           width={400}
           height={500}
-          className="w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-3deg]"
+          className="w-36 md:w-44 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-3deg]"
         />
       </div>
     </div>
