@@ -8,7 +8,17 @@ type Props = {
 const Hero = ({ ctaMode = "buy" }: Props) => (
   <section className="section bg-background">
     <div className="container-page">
-      <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
+      <div className="relative text-center max-w-3xl mx-auto mb-10 md:mb-14">
+        {ctaMode === "buy" && (
+          <img
+            src={bookCover}
+            alt=""
+            aria-hidden="true"
+            width={400}
+            height={500}
+            className="hidden md:block absolute top-2 -right-4 lg:-right-12 w-20 lg:w-28 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[8deg]"
+          />
+        )}
         <p className="eyebrow mb-5">A New Playbook from a 17-Year Real Estate Investor</p>
         <h1 className="h1-display text-foreground mb-6">
           How to Retire in 10 Years{" "}
