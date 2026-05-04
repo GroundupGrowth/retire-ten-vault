@@ -15,15 +15,15 @@ const Credibility = () => (
     <div className="container-page">
       <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
         <div className="md:col-span-5">
-          <div className="relative max-w-[400px] mx-auto md:mx-0">
+          <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-none mx-auto md:mx-0">
             <div className="absolute inset-0 translate-x-3 translate-y-3 bg-accent-primary/10 rounded-[4px]" />
             <img
               src={BARRY_PHOTO}
               alt="Barry Brooksby, author and 17-year real estate investor"
-              width={800}
-              height={800}
+              width={237}
+              height={290}
               loading="lazy"
-              className="relative w-full aspect-square object-cover rounded-[4px] border border-rule"
+              className="relative w-full h-auto rounded-[4px] border border-rule"
             />
           </div>
         </div>

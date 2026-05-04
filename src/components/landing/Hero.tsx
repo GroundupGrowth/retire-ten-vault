@@ -74,16 +74,6 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
             : "Ships today as instant digital download. Print edition available at checkout. 17 years of real deals. Over 10,000 readers."}
         </p>
       </div>
-
-      <div className="flex justify-center mt-14">
-        <img
-          src={bookCover}
-          alt="Live Rich, Die Rich book by Barry Brooksby"
-          width={400}
-          height={500}
-          className="w-36 md:w-44 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-3deg]"
-        />
-      </div>
     </div>
   </section>
 );
