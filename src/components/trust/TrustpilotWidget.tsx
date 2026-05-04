@@ -11,7 +11,17 @@ declare global {
   }
 }
 
-const TrustpilotWidget = () => {
+type Props = {
+  templateId?: string;
+  height?: string;
+  width?: string;
+};
+
+const TrustpilotWidget = ({
+  templateId = "53aa8807dec7e10d38f59f32",
+  height = "150px",
+  width = "100%",
+}: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -53,10 +63,10 @@ const TrustpilotWidget = () => {
       ref={ref}
       className="trustpilot-widget"
       data-locale="en-US"
-      data-template-id="53aa8807dec7e10d38f59f32"
+      data-template-id={templateId}
       data-businessunit-id="5eced1756efff500018631d5"
-      data-style-height="150px"
-      data-style-width="100%"
+      data-style-height={height}
+      data-style-width={width}
       data-token="afac0f22-bdca-48a3-9dfa-21cfdf869c2f"
     >
       <a

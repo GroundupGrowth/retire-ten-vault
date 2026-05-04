@@ -1,5 +1,9 @@
 import bookCover from "@/assets/book-cover.png";
 import MainCTA, { type CtaMode } from "@/components/cta/MainCTA";
+import TrustpilotWidget from "@/components/trust/TrustpilotWidget";
+
+const FASTPAY_URL =
+  "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d";
 
 type Props = {
   ctaMode?: CtaMode;
@@ -8,7 +12,7 @@ type Props = {
 const Hero = ({ ctaMode = "buy" }: Props) => (
   <section className="section bg-background">
     <div className="container-page">
-      <div className="relative text-center max-w-3xl mx-auto mb-10 md:mb-14">
+      <div className="relative text-center max-w-3xl mx-auto mb-8">
         {ctaMode === "buy" && (
           <img
             src={bookCover}
@@ -33,6 +37,16 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
         </p>
       </div>
 
+      <div className="flex justify-center mb-10 md:mb-12">
+        <div className="w-full max-w-sm">
+          <TrustpilotWidget
+            templateId="5419b6a8b0d04a076446a9ad"
+            height="24px"
+            width="100%"
+          />
+        </div>
+      </div>
+
       <div className="mx-auto w-full max-w-4xl mb-10 md:mb-14">
         <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.22)]">
           <iframe
@@ -47,10 +61,22 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
       </div>
 
       <div className="text-center">
-        <MainCTA mode={ctaMode} className="mb-4" />
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
+          <MainCTA mode={ctaMode} />
+          {ctaMode === "call" && (
+            <a
+              href={FASTPAY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Or Get the Book — $19.97
+            </a>
+          )}
+        </div>
         <p className="micro-trust max-w-xl mx-auto">
           {ctaMode === "call"
-            ? "30 minutes. No cost. No obligation. 17 years of real deals."
+            ? "30 minutes with Barry, or skip ahead and grab the book. No pitch either way."
             : "Ships today as instant digital download. Print edition available at checkout. 17 years of real deals. Over 10,000 readers."}
         </p>
       </div>
