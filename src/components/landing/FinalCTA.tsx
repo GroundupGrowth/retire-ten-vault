@@ -1,4 +1,10 @@
-const FinalCTA = () => (
+import MainCTA, { type CtaMode } from "@/components/cta/MainCTA";
+
+type Props = {
+  ctaMode?: CtaMode;
+};
+
+const FinalCTA = ({ ctaMode = "buy" }: Props) => (
   <section id="checkout" className="section" style={{ background: "hsl(var(--accent-primary))" }}>
     <div className="container-prose text-center">
       <h2
@@ -18,20 +24,15 @@ const FinalCTA = () => (
         The only question is what you own at the end of them.
       </p>
 
-      <a
-        href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-primary-inverted"
-      >
-        Get the Book $19.97
-      </a>
+      <MainCTA mode={ctaMode} variant="inverted" />
 
       <p
         className="mt-5 text-sm"
         style={{ color: "hsl(var(--background) / 0.7)" }}
       >
-        Instant digital delivery. Print edition available at checkout.
+        {ctaMode === "call"
+          ? "30 minutes with Barry. No pitch. No pressure."
+          : "Instant digital delivery. Print edition available at checkout."}
       </p>
     </div>
   </section>

@@ -11,39 +11,21 @@ import Objections from "@/components/landing/Objections";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
-const Index = () => {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Book",
-    name: "Live Rich, Die Rich",
-    author: { "@type": "Person", name: "Barry Brooksby" },
-    offers: {
-      "@type": "Offer",
-      price: "19.97",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-    },
-    description:
-      "A 17-year real estate investor's playbook for retiring in 10 years without the stock market, without a 401(k), and without waiting until 65.",
-  };
-
-  return (
-    <main className="bg-background">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <TopBar />
-      <Hero />
-      <TwoPaths />
-      <WhoFor />
-      <Credibility />
-      <InsideBook />
-      <Mechanism />
-      <BonusStack />
-      <StrategyCTA />
-      <Objections />
-      <FinalCTA />
-      <Footer />
-    </main>
-  );
-};
+const Index = () => (
+  <main className="bg-background">
+    <TopBar />
+    <Hero ctaMode="call" />
+    <TwoPaths />
+    <WhoFor />
+    <Credibility />
+    <InsideBook />
+    <Mechanism />
+    <BonusStack />
+    <StrategyCTA />
+    <Objections />
+    <FinalCTA ctaMode="call" />
+    <Footer />
+  </main>
+);
 
 export default Index;
