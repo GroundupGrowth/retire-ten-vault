@@ -33,13 +33,13 @@ const Hero = () => (
           </p>
         </div>
 
-        {/* Right column vertical video + book overlay */}
+        {/* Right column landscape video + book overlay */}
         <div className="lg:col-span-6 order-2 relative">
-          <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[320px]">
-            <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.18)]">
+          <div className="relative w-full">
+            <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.18)]">
               <iframe
                 title="Barry Brooksby the 2008 story"
-                src="https://www.tella.tv/video/vid_cmo7bsal3006z04l2f9w0fya1/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
+                src="https://www.tella.tv/video/vid_cmorbvz5t00ye04i286li9168/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
                 className="absolute inset-0 h-full w-full"
                 allow="autoplay; fullscreen"
                 allowTransparency
@@ -53,7 +53,7 @@ const Hero = () => (
               alt="Live Rich, Die Rich book by Barry Brooksby"
               width={400}
               height={500}
-              className="hidden md:block absolute -bottom-10 -right-14 lg:-right-16 w-32 lg:w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[6deg]"
+              className="hidden md:block absolute -bottom-10 -right-6 lg:-right-10 w-28 lg:w-36 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[6deg]"
             />
           </div>
 

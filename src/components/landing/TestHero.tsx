@@ -16,11 +16,11 @@ const TestHero = () => (
         </p>
       </div>
 
-      <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[380px] mb-10 md:mb-12">
-        <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.22)]">
+      <div className="relative mx-auto w-full max-w-3xl mb-10 md:mb-12">
+        <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.22)]">
           <iframe
             title="Barry Brooksby the 2008 story"
-            src="https://www.tella.tv/video/vid_cmo7bsal3006z04l2f9w0fya1/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
+            src="https://www.tella.tv/video/vid_cmorbvz5t00ye04i286li9168/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=0&o=1"
             className="absolute inset-0 h-full w-full"
             allow="autoplay; fullscreen"
             allowTransparency
@@ -34,7 +34,7 @@ const TestHero = () => (
           alt="Live Rich, Die Rich book by Barry Brooksby"
           width={400}
           height={500}
-          className="hidden md:block absolute -bottom-10 -right-16 lg:-right-20 w-32 lg:w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[6deg]"
+          className="hidden md:block absolute -bottom-10 -right-8 lg:-right-12 w-32 lg:w-40 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[6deg]"
         />
       </div>
 
