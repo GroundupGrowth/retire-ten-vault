@@ -9,6 +9,7 @@ import Book from "./pages/Book.tsx";
 import Test from "./pages/Test.tsx";
 import Pages from "./pages/Pages.tsx";
 import Settings from "./pages/Settings.tsx";
+import Admin from "./pages/Admin.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import FiQuiz from "./pages/FiQuiz.tsx";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/journeyresults" element={<JourneyResults />} />
           <Route path="/pages" element={<Pages />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/tools/fire-calculator" element={<FireCalculatorPage />} />
           <Route path="/tools/compound-interest-calculator" element={<CompoundCalculatorPage />} />
