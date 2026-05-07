@@ -120,13 +120,32 @@ const groups: Group[] = [
         path: "/thank-you",
         title: "Strategy Session Thank You",
         description:
-          "Redirect target after a booking is made in GHL. Confirmation + what-happens-next steps.",
+          "Redirect target after a booking is made in GHL. Confirmation + what-happens-next steps. Fires the Meta Pixel Lead event on mount.",
       },
       {
         path: "/book-thank-you",
         title: "Book Purchase Thank You",
         description:
           "Redirect target after a FastPayDirect purchase. Includes an embedded calendar so new readers can book a strategy call right away.",
+      },
+    ],
+  },
+  {
+    eyebrow: "Internal",
+    heading: "Admin / config",
+    entries: [
+      {
+        path: "/settings",
+        title: "Site Settings",
+        description:
+          "View and locally override the Meta Pixel ID and booking calendar URL. Overrides live in your browser only.",
+        hidden: true,
+      },
+      {
+        path: "/journeyresults",
+        title: "All Quiz Result Pages",
+        description: "Internal QA listing of every stage result. Not linked from public navigation.",
+        hidden: true,
       },
     ],
   },

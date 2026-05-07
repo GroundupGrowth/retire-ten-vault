@@ -3,10 +3,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import MetaPixelOverride from "@/components/MetaPixelOverride";
 import Index from "./pages/Index.tsx";
 import Book from "./pages/Book.tsx";
 import Test from "./pages/Test.tsx";
 import Pages from "./pages/Pages.tsx";
+import Settings from "./pages/Settings.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import FiQuiz from "./pages/FiQuiz.tsx";
@@ -28,6 +30,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <MetaPixelOverride />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/book" element={<Book />} />
@@ -38,6 +41,7 @@ const App = () => (
           <Route path="/quiz/result/:stage" element={<QuizResult />} />
           <Route path="/journeyresults" element={<JourneyResults />} />
           <Route path="/pages" element={<Pages />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/tools/fire-calculator" element={<FireCalculatorPage />} />
           <Route path="/tools/compound-interest-calculator" element={<CompoundCalculatorPage />} />
