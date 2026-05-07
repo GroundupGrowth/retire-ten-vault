@@ -15,7 +15,7 @@ const steps = [
 
 const ThankYou = () => {
   useEffect(() => {
-    window.fbq?.("track", "Lead");
+    window.fbq?.("track", "Schedule");
   }, []);
 
   return (

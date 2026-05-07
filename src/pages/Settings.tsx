@@ -125,8 +125,8 @@ const Settings = () => {
             <Field
               id="meta-pixel-id"
               label="Meta Pixel ID"
-              description="The Facebook / Meta pixel ID used to fire PageView site-wide and the Lead event on /thank-you after a strategy session is booked."
-              usedFor={["Every page (PageView)", "/thank-you (Lead)"]}
+              description="The Facebook / Meta pixel ID used to fire PageView site-wide and the Schedule event on /thank-you after a strategy session is booked."
+              usedFor={["Every page (PageView)", "/thank-you (Schedule)"]}
               value={pixelInput}
               onChange={setPixelInput}
               defaultValue={defaults.metaPixelId}

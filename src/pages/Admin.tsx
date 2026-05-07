@@ -131,7 +131,7 @@ const buildGroups = (): PageGroup[] => [
       {
         path: "/thank-you",
         title: "Strategy Session Thank You",
-        description: "Post-booking redirect. Fires Meta Pixel Lead event.",
+        description: "Post-booking redirect. Fires Meta Pixel Schedule event.",
       },
       {
         path: "/book-thank-you",
@@ -483,8 +483,8 @@ const SettingsTab = () => {
         <SettingsField
           id="meta-pixel-id"
           label="Meta Pixel ID"
-          description="Fires PageView site-wide and the Lead event on /thank-you after a strategy session is booked."
-          usedFor={["Every page (PageView)", "/thank-you (Lead)"]}
+          description="Fires PageView site-wide and the Schedule event on /thank-you after a strategy session is booked."
+          usedFor={["Every page (PageView)", "/thank-you (Schedule)"]}
           value={pixelInput}
           onChange={setPixelInput}
           defaultValue={defaults.metaPixelId}

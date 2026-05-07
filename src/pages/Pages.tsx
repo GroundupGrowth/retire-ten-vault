@@ -120,7 +120,7 @@ const groups: Group[] = [
         path: "/thank-you",
         title: "Strategy Session Thank You",
         description:
-          "Redirect target after a booking is made in GHL. Confirmation + what-happens-next steps. Fires the Meta Pixel Lead event on mount.",
+          "Redirect target after a booking is made in GHL. Confirmation + what-happens-next steps. Fires the Meta Pixel Schedule event on mount.",
       },
       {
         path: "/book-thank-you",
