@@ -12,6 +12,60 @@ import {
   type SiteConfig,
 } from "@/config/site";
 
+type FieldProps = {
+  id: string;
+  label: string;
+  description: string;
+  usedFor: string[];
+  value: string;
+  onChange: (v: string) => void;
+  defaultValue: string;
+  isOverride: boolean;
+  monospace?: boolean;
+};
+
+const Field = ({
+  id,
+  label,
+  description,
+  usedFor,
+  value,
+  onChange,
+  defaultValue,
+  isOverride,
+  monospace = true,
+}: FieldProps) => (
+  <div className="bg-background border border-rule rounded-[4px] p-6 md:p-8">
+    <div className="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+      <Label htmlFor={id} className="text-foreground font-sans text-base font-medium">
+        {label}
+      </Label>
+      <span
+        className={`stat-label ${isOverride ? "text-accent-primary" : "text-ink-muted"}`}
+      >
+        {isOverride ? "Overridden in this browser" : "Using code default"}
+      </span>
+    </div>
+    <p className="text-sm text-ink-secondary mb-4">{description}</p>
+    <Input
+      id={id}
+      type="text"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className={`h-11 bg-background border-rule ${monospace ? "font-mono text-xs md:text-sm" : ""}`}
+    />
+    <div className="mt-3 text-xs text-ink-muted">
+      <p className="mb-1">
+        <span className="font-medium">Default:</span>{" "}
+        <span className="font-mono break-all">{defaultValue}</span>
+      </p>
+      <p>
+        <span className="font-medium">Used on:</span> {usedFor.join(" · ")}
+      </p>
+    </div>
+  </div>
+);
+
 const Settings = () => {
   const defaults = getDefaults();
   const [overrides, setOverridesState] = useState<Partial<SiteConfig>>(getOverrides());
@@ -43,58 +97,6 @@ const Settings = () => {
     setBookingInput(defaults.bookingUrl);
     setSavedAt(new Date());
   };
-
-  const Field = ({
-    id,
-    label,
-    description,
-    usedFor,
-    value,
-    onChange,
-    defaultValue,
-    isOverride,
-    monospace = true,
-  }: {
-    id: string;
-    label: string;
-    description: string;
-    usedFor: string[];
-    value: string;
-    onChange: (v: string) => void;
-    defaultValue: string;
-    isOverride: boolean;
-    monospace?: boolean;
-  }) => (
-    <div className="bg-background border border-rule rounded-[4px] p-6 md:p-8">
-      <div className="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
-        <Label htmlFor={id} className="text-foreground font-sans text-base font-medium">
-          {label}
-        </Label>
-        <span
-          className={`stat-label ${isOverride ? "text-accent-primary" : "text-ink-muted"}`}
-        >
-          {isOverride ? "Overridden in this browser" : "Using code default"}
-        </span>
-      </div>
-      <p className="text-sm text-ink-secondary mb-4">{description}</p>
-      <Input
-        id={id}
-        type="text"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className={`h-11 bg-background border-rule ${monospace ? "font-mono text-xs md:text-sm" : ""}`}
-      />
-      <div className="mt-3 text-xs text-ink-muted">
-        <p className="mb-1">
-          <span className="font-medium">Default:</span>{" "}
-          <span className="font-mono break-all">{defaultValue}</span>
-        </p>
-        <p>
-          <span className="font-medium">Used on:</span> {usedFor.join(" · ")}
-        </p>
-      </div>
-    </div>
-  );
 
   return (
     <main className="bg-background min-h-screen">
