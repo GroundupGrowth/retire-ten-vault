@@ -67,11 +67,19 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
               Or Get the Book — $19.97
             </a>
           )}
+          <a
+            href="https://focuswealthgroup.com/liverichdierich"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            Want a signed copy from Barry?
+          </a>
         </div>
         <p className="micro-trust max-w-xl mx-auto">
           {ctaMode === "call"
-            ? "30 minutes with Barry, or skip ahead and grab the book. No pitch either way."
-            : "Ships today as instant digital download. Print edition available at checkout. 17 years of real deals. Over 10,000 readers."}
+            ? "30 minutes with Barry, the eBook for $19.97, or a signed copy from Barry. No pitch either way."
+            : "Ships today as instant digital download. Signed physical copies available from Barry's store. 17 years of real deals."}
         </p>
       </div>
     </div>

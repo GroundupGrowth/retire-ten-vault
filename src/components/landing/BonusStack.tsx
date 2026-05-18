@@ -3,19 +3,19 @@ const cards = [
     n: "01",
     title: "The Book Live Rich, Die Rich",
     desc: "The full 17-year playbook, in print or digital.",
-    value: "$24",
+    value: "$33.95",
   },
   {
     n: "02",
     title: "The Retire-in-10 Worksheet",
     desc: "The exact math Barry uses to pressure-test a 10-year plan against real numbers.",
-    value: "$49",
+    value: "$500",
   },
   {
     n: "03",
     title: "The Vault Primer (Video)",
     desc: "A 30-minute walkthrough of the infrastructure piece from Section 6.",
-    value: "$97",
+    value: "$197",
   },
 ];
 
@@ -51,7 +51,7 @@ const BonusStack = () => (
       <div className="mt-14 max-w-xl mx-auto bg-background border border-rule rounded-[4px] p-6 md:p-8 text-center">
         <div className="flex items-baseline justify-center gap-3 mb-2">
           <span className="stat-label text-ink-muted">Total value</span>
-          <span className="font-serif text-xl text-ink-muted line-through decoration-ink-muted/60">$170</span>
+          <span className="font-serif text-xl text-ink-muted line-through decoration-ink-muted/60">$730</span>
         </div>
         <div className="flex items-baseline justify-center gap-2">
           <span className="stat-label text-accent-primary">Yours today for</span>
@@ -59,7 +59,7 @@ const BonusStack = () => (
         </div>
       </div>
 
-      <div className="text-center mt-10">
+      <div className="text-center mt-10 flex flex-wrap items-center justify-center gap-3">
         <a
           href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
           target="_blank"
@@ -67,6 +67,14 @@ const BonusStack = () => (
           className="btn-primary"
         >
           Get the Book $19.97
+        </a>
+        <a
+          href="https://focuswealthgroup.com/liverichdierich"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary"
+        >
+          Want a signed copy from Barry?
         </a>
       </div>
     </div>
