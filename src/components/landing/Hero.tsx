@@ -19,7 +19,7 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
           aria-hidden="true"
           width={400}
           height={500}
-          className="hidden md:block absolute top-2 -right-4 lg:-right-12 w-20 lg:w-28 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[8deg]"
+          className="hidden lg:block absolute -top-4 -right-32 xl:-right-40 w-28 xl:w-32 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[8deg]"
         />
         <p className="eyebrow mb-5">A New Playbook from a 17-Year Real Estate Investor</p>
         <h1 className="h1-display text-foreground mb-6">
@@ -67,19 +67,11 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
               Or Get the Book — $19.97
             </a>
           )}
-          <a
-            href="https://focuswealthgroup.com/liverichdierich"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary"
-          >
-            Want a signed copy from Barry?
-          </a>
         </div>
         <p className="micro-trust max-w-xl mx-auto">
           {ctaMode === "call"
-            ? "30 minutes with Barry, the eBook for $19.97, or a signed copy from Barry. No pitch either way."
-            : "Ships today as instant digital download. Signed physical copies available from Barry's store. 17 years of real deals."}
+            ? "30 minutes with Barry, or skip ahead and grab the book. No pitch either way."
+            : "Ships today as instant digital download. Print edition available at checkout. 17 years of real deals. Over 10,000 readers."}
         </p>
       </div>
     </div>

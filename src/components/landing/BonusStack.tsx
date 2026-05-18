@@ -59,7 +59,7 @@ const BonusStack = () => (
         </div>
       </div>
 
-      <div className="text-center mt-10 flex flex-wrap items-center justify-center gap-3">
+      <div className="text-center mt-10">
         <a
           href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
           target="_blank"
@@ -67,14 +67,6 @@ const BonusStack = () => (
           className="btn-primary"
         >
           Get the Book $19.97
-        </a>
-        <a
-          href="https://focuswealthgroup.com/liverichdierich"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-secondary"
-        >
-          Want a signed copy from Barry?
         </a>
       </div>
     </div>

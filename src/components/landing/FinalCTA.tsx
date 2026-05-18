@@ -24,30 +24,15 @@ const FinalCTA = ({ ctaMode = "buy" }: Props) => (
         The only question is what you own at the end of them.
       </p>
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        <MainCTA mode={ctaMode} variant="inverted" />
-        <a
-          href="https://focuswealthgroup.com/liverichdierich"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary-inverted"
-          style={{
-            background: "transparent",
-            color: "hsl(var(--background))",
-            borderColor: "hsl(var(--background))",
-          }}
-        >
-          Want a signed copy from Barry?
-        </a>
-      </div>
+      <MainCTA mode={ctaMode} variant="inverted" />
 
       <p
         className="mt-5 text-sm"
         style={{ color: "hsl(var(--background) / 0.7)" }}
       >
         {ctaMode === "call"
-          ? "30 minutes with Barry. Or grab a signed physical copy from his store."
-          : "Instant digital delivery, or a signed physical copy from Barry's store."}
+          ? "30 minutes with Barry. No pitch. No pressure."
+          : "Instant digital delivery. Print edition available at checkout."}
       </p>
     </div>
   </section>
