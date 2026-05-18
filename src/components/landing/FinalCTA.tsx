@@ -18,9 +18,20 @@ const FinalCTA = () => (
         The only question is what you own at the end of them.
       </p>
 
-      <a href="#checkout" className="btn-primary-inverted">
-        Get the Book$19.97
-      </a>
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        <a href="#checkout" className="btn-primary-inverted">
+          Get the Book $19.97
+        </a>
+        <a
+          href="https://focuswealthgroup.com/liverichdierich"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary-inverted"
+          style={{ background: "transparent", color: "hsl(var(--background))", borderColor: "hsl(var(--background))" }}
+        >
+          Want a signed copy from Barry?
+        </a>
+      </div>
 
       <p
         className="mt-5 text-sm"

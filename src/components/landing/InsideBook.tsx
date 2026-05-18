@@ -41,9 +41,19 @@ const InsideBook = () => (
             ))}
           </ul>
 
-          <a href="#checkout" className="btn-primary">
-            Get the Book$19.97
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a href="#checkout" className="btn-primary">
+              Get the Book $19.97
+            </a>
+            <a
+              href="https://focuswealthgroup.com/liverichdierich"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              Want a signed copy from Barry?
+            </a>
+          </div>
         </div>
       </div>
     </div>

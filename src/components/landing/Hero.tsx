@@ -24,9 +24,19 @@ const Hero = () => {
               first time in <em>Live Rich, Die Rich</em>.
             </p>
 
-            <a href="#checkout" className="btn-primary mb-4">
-              Get the Book$19.97
-            </a>
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <a href="#checkout" className="btn-primary">
+                Get the Book $19.97
+              </a>
+              <a
+                href="https://focuswealthgroup.com/liverichdierich"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                Want a signed copy from Barry?
+              </a>
+            </div>
 
             <p className="micro-trust max-w-[32rem]">
               Ships today as instant digital download. Print edition available at checkout.

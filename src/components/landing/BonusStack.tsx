@@ -1,21 +1,21 @@
 const cards = [
   {
     n: "01",
-    title: "The BookLive Rich, Die Rich",
+    title: "The Book — Live Rich, Die Rich",
     desc: "The full 17-year playbook, in print or digital.",
-    value: "$24",
+    value: "$33.95",
   },
   {
     n: "02",
     title: "The Retire-in-10 Worksheet",
     desc: "The exact math Barry uses to pressure-test a 10-year plan against real numbers.",
-    value: "$49",
+    value: "$500",
   },
   {
     n: "03",
     title: "The Vault Primer (Video)",
     desc: "A 30-minute walkthrough of the infrastructure piece from Section 6.",
-    value: "$97",
+    value: "$197",
   },
 ];
 
@@ -49,12 +49,20 @@ const BonusStack = () => (
       </div>
 
       <p className="pull-quote text-center mt-14 text-xl md:text-2xl text-ink-secondary">
-        Total value: $170. Yours today for $19.97.
+        Total value over $730. Yours today for $19.97.
       </p>
 
-      <div className="text-center mt-10">
+      <div className="text-center mt-10 flex flex-wrap items-center justify-center gap-4">
         <a href="#checkout" className="btn-primary">
-          Get the Book$19.97
+          Get the Book $19.97
+        </a>
+        <a
+          href="https://focuswealthgroup.com/liverichdierich"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-secondary"
+        >
+          Want a signed copy from Barry?
         </a>
       </div>
     </div>
