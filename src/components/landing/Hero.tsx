@@ -1,4 +1,4 @@
-import bookCover from "@/assets/book-cover.png";
+import { BOOK_COVER_URL } from "@/assets/bookCover";
 import MainCTA, { type CtaMode } from "@/components/cta/MainCTA";
 import TrustpilotWidget from "@/components/trust/TrustpilotWidget";
 
@@ -14,7 +14,7 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
     <div className="container-page">
       <div className="relative text-center max-w-3xl mx-auto mb-8">
         <img
-          src={bookCover}
+          src={BOOK_COVER_URL}
           alt=""
           aria-hidden="true"
           width={400}

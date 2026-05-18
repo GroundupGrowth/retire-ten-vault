@@ -1,4 +1,4 @@
-import bookCover from "@/assets/book-cover.png";
+import { BOOK_COVER_URL } from "@/assets/bookCover";
 
 const TestHero = () => (
   <section className="section bg-background">
@@ -47,7 +47,7 @@ const TestHero = () => (
 
       <div className="flex justify-center mt-12">
         <img
-          src={bookCover}
+          src={BOOK_COVER_URL}
           alt="Live Rich, Die Rich book cover"
           width={400}
           height={500}

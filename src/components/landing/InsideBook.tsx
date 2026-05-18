@@ -1,4 +1,4 @@
-import bookCover from "@/assets/book-cover.png";
+import { BOOK_COVER_URL } from "@/assets/bookCover";
 
 const bullets = [
   'Why "retire in 10 years" is a math number, not a marketing number and the exact conditions under which it works',
@@ -16,7 +16,7 @@ const InsideBook = () => (
       <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
         <div className="md:col-span-4 flex justify-center md:justify-start">
           <img
-            src={bookCover}
+            src={BOOK_COVER_URL}
             alt="Live Rich, Die Rich book cover"
             width={400}
             height={500}
