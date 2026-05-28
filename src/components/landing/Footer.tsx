@@ -19,6 +19,7 @@ const Footer = () => (
           <ul className="space-y-2 text-sm">
             <li><Link to="/book" className="opacity-80 hover:opacity-100 transition-opacity">The Book</Link></li>
             <li><Link to="/quiz" className="opacity-80 hover:opacity-100 transition-opacity">Journey Quiz</Link></li>
+            <li><Link to="/worksheet" className="opacity-80 hover:opacity-100 transition-opacity">Retire-in-10 Worksheet</Link></li>
             <li><Link to="/blog" className="opacity-80 hover:opacity-100 transition-opacity">Field Notes</Link></li>
             <li><Link to="/tools" className="opacity-80 hover:opacity-100 transition-opacity">Tools</Link></li>
             <li><a href="#" className="opacity-80 hover:opacity-100 transition-opacity">Contact</a></li>

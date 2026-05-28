@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import MetaPixelOverride from "@/components/MetaPixelOverride";
 import Index from "./pages/Index.tsx";
 import Book from "./pages/Book.tsx";
+import Worksheet from "./pages/Worksheet.tsx";
 import Test from "./pages/Test.tsx";
 import Pages from "./pages/Pages.tsx";
 import Settings from "./pages/Settings.tsx";
@@ -35,6 +36,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/book" element={<Book />} />
+          <Route path="/worksheet" element={<Worksheet />} />
           <Route path="/test" element={<Test />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
