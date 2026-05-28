@@ -42,6 +42,11 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
         </div>
       </div>
 
+      <div className="text-center mb-5">
+        <p className="eyebrow text-accent-primary mb-1">Step 01 · Watch the Masterclass</p>
+        <p className="text-sm text-ink-muted italic">Barry's 2008 story, in 90 seconds.</p>
+      </div>
+
       <div className="mx-auto w-full max-w-4xl mb-10 md:mb-14">
         <div className="relative aspect-video w-full overflow-hidden rounded-[14px] bg-foreground/90 border border-rule shadow-[0_24px_48px_rgba(28,26,23,0.22)]">
           <iframe
@@ -53,6 +58,13 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
             loading="lazy"
           />
         </div>
+      </div>
+
+      <div className="text-center mb-5">
+        <p className="eyebrow text-accent-primary mb-1">Step 02 · Pick Your Next Step</p>
+        <p className="text-sm text-ink-muted">
+          Book a call, grab the eBook, or order the signed copy.
+        </p>
       </div>
 
       <div className="text-center">
