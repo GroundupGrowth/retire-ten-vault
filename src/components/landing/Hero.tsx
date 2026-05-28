@@ -12,24 +12,85 @@ type Props = {
 
 const Hero = ({ ctaMode = "buy" }: Props) => (
   <section className="section bg-background relative overflow-hidden">
-    {/* Soft warm-light backdrop */}
+    {/* Layered warm light: top wash + soft bottom glow */}
     <div
       aria-hidden
       className="absolute inset-0 pointer-events-none"
       style={{
         background:
-          "radial-gradient(ellipse 70% 50% at 50% 0%, hsl(var(--bg-elevated)) 0%, transparent 70%)",
+          "radial-gradient(ellipse 70% 50% at 50% 0%, hsl(var(--bg-elevated)) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 50% 100%, hsl(var(--bg-elevated)) 0%, transparent 65%)",
       }}
     />
-    {/* Faint corner ornaments */}
+
+    {/* Four-corner editorial hairlines (vertical + short horizontal printer's-mark) */}
     <div
       aria-hidden
-      className="hidden md:block absolute top-16 left-8 lg:left-16 h-16 w-px bg-gradient-to-b from-accent-primary/30 to-transparent pointer-events-none"
+      className="hidden md:block absolute top-12 left-8 lg:left-16 h-16 w-px bg-gradient-to-b from-accent-primary/35 to-transparent pointer-events-none"
     />
     <div
       aria-hidden
-      className="hidden md:block absolute bottom-16 right-8 lg:right-16 h-16 w-px bg-gradient-to-t from-accent-primary/30 to-transparent pointer-events-none"
+      className="hidden md:block absolute top-12 left-8 lg:left-16 h-px w-12 bg-gradient-to-r from-accent-primary/35 to-transparent pointer-events-none"
     />
+    <div
+      aria-hidden
+      className="hidden md:block absolute top-12 right-8 lg:right-16 h-16 w-px bg-gradient-to-b from-accent-primary/35 to-transparent pointer-events-none"
+    />
+    <div
+      aria-hidden
+      className="hidden md:block absolute top-12 right-8 lg:right-16 h-px w-12 bg-gradient-to-l from-accent-primary/35 to-transparent pointer-events-none"
+    />
+    <div
+      aria-hidden
+      className="hidden md:block absolute bottom-12 left-8 lg:left-16 h-16 w-px bg-gradient-to-t from-accent-primary/35 to-transparent pointer-events-none"
+    />
+    <div
+      aria-hidden
+      className="hidden md:block absolute bottom-12 left-8 lg:left-16 h-px w-12 bg-gradient-to-r from-accent-primary/35 to-transparent pointer-events-none"
+    />
+    <div
+      aria-hidden
+      className="hidden md:block absolute bottom-12 right-8 lg:right-16 h-16 w-px bg-gradient-to-t from-accent-primary/35 to-transparent pointer-events-none"
+    />
+    <div
+      aria-hidden
+      className="hidden md:block absolute bottom-12 right-8 lg:right-16 h-px w-12 bg-gradient-to-l from-accent-primary/35 to-transparent pointer-events-none"
+    />
+
+    {/* Scattered side-margin dots */}
+    <span
+      aria-hidden
+      className="hidden lg:block absolute top-28 left-24 h-1 w-1 rounded-full bg-accent-primary/40 pointer-events-none"
+    />
+    <span
+      aria-hidden
+      className="hidden lg:block absolute top-1/2 left-12 -translate-y-1/2 h-1 w-1 rounded-full bg-accent-primary/30 pointer-events-none"
+    />
+    <span
+      aria-hidden
+      className="hidden lg:block absolute bottom-32 left-32 h-1 w-1 rounded-full bg-accent-primary/40 pointer-events-none"
+    />
+    <span
+      aria-hidden
+      className="hidden lg:block absolute top-40 right-24 h-1 w-1 rounded-full bg-accent-primary/30 pointer-events-none"
+    />
+    <span
+      aria-hidden
+      className="hidden lg:block absolute bottom-28 right-32 h-1 w-1 rounded-full bg-accent-primary/40 pointer-events-none"
+    />
+
+    {/* Watermark page number */}
+    <span
+      aria-hidden
+      className="hidden xl:block absolute top-1/2 left-4 -translate-y-1/2 font-serif text-[10rem] font-light leading-none text-accent-primary/[0.04] pointer-events-none select-none"
+    >
+      10
+    </span>
+    <span
+      aria-hidden
+      className="hidden xl:block absolute top-1/2 right-4 -translate-y-1/2 font-serif text-[10rem] font-light leading-none text-accent-primary/[0.04] pointer-events-none select-none"
+    >
+      YR
+    </span>
 
     <div className="container-page relative">
       <div className="relative text-center max-w-3xl mx-auto mb-8">
