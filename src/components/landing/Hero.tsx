@@ -11,8 +11,27 @@ type Props = {
 };
 
 const Hero = ({ ctaMode = "buy" }: Props) => (
-  <section className="section bg-background">
-    <div className="container-page">
+  <section className="section bg-background relative overflow-hidden">
+    {/* Soft warm-light backdrop */}
+    <div
+      aria-hidden
+      className="absolute inset-0 pointer-events-none"
+      style={{
+        background:
+          "radial-gradient(ellipse 70% 50% at 50% 0%, hsl(var(--bg-elevated)) 0%, transparent 70%)",
+      }}
+    />
+    {/* Faint corner ornaments */}
+    <div
+      aria-hidden
+      className="hidden md:block absolute top-16 left-8 lg:left-16 h-16 w-px bg-gradient-to-b from-accent-primary/30 to-transparent pointer-events-none"
+    />
+    <div
+      aria-hidden
+      className="hidden md:block absolute bottom-16 right-8 lg:right-16 h-16 w-px bg-gradient-to-t from-accent-primary/30 to-transparent pointer-events-none"
+    />
+
+    <div className="container-page relative">
       <div className="relative text-center max-w-3xl mx-auto mb-8">
         <img
           src={BOOK_COVER_PAPERBACK_URL}
@@ -22,6 +41,14 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
           height={500}
           className="hidden lg:block absolute -top-4 -right-32 xl:-right-40 w-28 xl:w-32 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-10deg]"
         />
+        <div
+          aria-hidden
+          className="flex items-center justify-center gap-2.5 mb-4"
+        >
+          <span className="h-px w-10 bg-accent-primary/35" />
+          <span className="h-1.5 w-1.5 rounded-full bg-accent-primary" />
+          <span className="h-px w-10 bg-accent-primary/35" />
+        </div>
         <p className="eyebrow mb-5">A New Playbook from a 17-Year Real Estate Investor</p>
         <h1 className="h1-display text-foreground mb-6">
           How to Retire in 10 Years{" "}
