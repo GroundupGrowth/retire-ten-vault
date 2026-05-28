@@ -249,7 +249,7 @@ const Worksheet = () => {
               return (
                 <div
                   key={item.key}
-                  className={`border rounded-[4px] p-5 transition-colors ${
+                  className={`border rounded-[4px] p-5 transition-colors print:break-inside-avoid ${
                     a.done ? "border-accent-primary bg-accent-primary/5" : "border-rule bg-background"
                   }`}
                 >
@@ -333,7 +333,7 @@ const Worksheet = () => {
           </div>
 
           <div
-            className={`border rounded-[4px] p-5 mb-12 transition-colors ${
+            className={`border rounded-[4px] p-5 mb-12 transition-colors print:break-inside-avoid ${
               state.practiceBudget.done
                 ? "border-accent-primary bg-accent-primary/5"
                 : "border-rule bg-background"
@@ -437,7 +437,7 @@ const Worksheet = () => {
 };
 
 const SectionHeader = ({ number, title }: { number: string; title: string }) => (
-  <div className="flex items-baseline gap-4 mb-3 pb-3 border-b border-rule">
+  <div className="flex items-baseline gap-4 mb-3 pb-3 border-b border-rule print:break-before-page">
     <span className="font-serif text-2xl md:text-3xl font-semibold text-accent-primary leading-none">
       {number}
     </span>
