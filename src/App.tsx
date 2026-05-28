@@ -7,6 +7,7 @@ import MetaPixelOverride from "@/components/MetaPixelOverride";
 import Index from "./pages/Index.tsx";
 import Book from "./pages/Book.tsx";
 import Worksheet from "./pages/Worksheet.tsx";
+import Recording from "./pages/Recording.tsx";
 import Test from "./pages/Test.tsx";
 import Pages from "./pages/Pages.tsx";
 import Settings from "./pages/Settings.tsx";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/book" element={<Book />} />
           <Route path="/worksheet" element={<Worksheet />} />
+          <Route path="/recording" element={<Recording />} />
           <Route path="/test" element={<Test />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
