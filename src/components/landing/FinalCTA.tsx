@@ -1,4 +1,5 @@
 import MainCTA, { type CtaMode } from "@/components/cta/MainCTA";
+import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
 
 type Props = {
   ctaMode?: CtaMode;
@@ -24,15 +25,18 @@ const FinalCTA = ({ ctaMode = "buy" }: Props) => (
         The only question is what you own at the end of them.
       </p>
 
-      <MainCTA mode={ctaMode} variant="inverted" />
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        <MainCTA mode={ctaMode} variant="inverted" />
+        <SignedCopyCTA variant="inverted-outline" />
+      </div>
 
       <p
         className="mt-5 text-sm"
         style={{ color: "hsl(var(--background) / 0.7)" }}
       >
         {ctaMode === "call"
-          ? "30 minutes with Barry. No pitch. No pressure."
-          : "Instant digital delivery. Print edition available at checkout."}
+          ? "30 minutes with Barry. PDF eBook for $19.97 or signed copy for $33.95."
+          : "Instant PDF download for $19.97 or signed physical copy for $33.95."}
       </p>
     </div>
   </section>

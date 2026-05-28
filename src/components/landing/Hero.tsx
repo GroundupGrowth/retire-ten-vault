@@ -1,5 +1,6 @@
-import { BOOK_COVER_URL } from "@/assets/bookCover";
+import { BOOK_COVER_PAPERBACK_URL } from "@/assets/bookCover";
 import MainCTA, { type CtaMode } from "@/components/cta/MainCTA";
+import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
 import TrustpilotWidget from "@/components/trust/TrustpilotWidget";
 
 const FASTPAY_URL =
@@ -14,12 +15,12 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
     <div className="container-page">
       <div className="relative text-center max-w-3xl mx-auto mb-8">
         <img
-          src={BOOK_COVER_URL}
+          src={BOOK_COVER_PAPERBACK_URL}
           alt=""
           aria-hidden="true"
           width={400}
           height={500}
-          className="hidden lg:block absolute -top-4 -right-32 xl:-right-40 w-28 xl:w-32 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[8deg]"
+          className="hidden lg:block absolute -top-4 -right-32 xl:-right-40 w-28 xl:w-32 drop-shadow-[0_18px_30px_rgba(28,26,23,0.25)] rotate-[-10deg]"
         />
         <p className="eyebrow mb-5">A New Playbook from a 17-Year Real Estate Investor</p>
         <h1 className="h1-display text-foreground mb-6">
@@ -64,14 +65,15 @@ const Hero = ({ ctaMode = "buy" }: Props) => (
               rel="noopener noreferrer"
               className="btn-secondary"
             >
-              Or Get the Book — $19.97
+              Or Get the PDF eBook — $19.97
             </a>
           )}
+          <SignedCopyCTA />
         </div>
         <p className="micro-trust max-w-xl mx-auto">
           {ctaMode === "call"
-            ? "30 minutes with Barry, or skip ahead and grab the book. No pitch either way."
-            : "Ships today as instant digital download. Print edition available at checkout. 17 years of real deals. Over 10,000 readers."}
+            ? "30 minutes with Barry, the PDF eBook for $19.97, or a signed copy for $33.95."
+            : "Instant PDF download for $19.97. Signed physical copy from Barry's store for $33.95."}
         </p>
       </div>
     </div>

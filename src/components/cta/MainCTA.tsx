@@ -18,7 +18,7 @@ const MainCTA = ({
   mode,
   variant = "primary",
   className = "",
-  buyLabel = "Get the Book $19.97",
+  buyLabel = "Get the PDF eBook — $19.97",
   callLabel = "Book a Call with Barry",
 }: Props) => {
   const base = variant === "inverted" ? "btn-primary-inverted" : "btn-primary";

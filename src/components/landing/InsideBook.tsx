@@ -1,4 +1,5 @@
 import { BOOK_COVER_URL } from "@/assets/bookCover";
+import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
 
 const bullets = [
   'Why "retire in 10 years" is a math number, not a marketing number and the exact conditions under which it works',
@@ -43,14 +44,17 @@ const InsideBook = () => (
             ))}
           </ul>
 
-          <a
-            href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Get the Book $19.97
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Get the PDF eBook — $19.97
+            </a>
+            <SignedCopyCTA />
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
+
 const cards = [
   {
     n: "01",
@@ -59,15 +61,16 @@ const BonusStack = () => (
         </div>
       </div>
 
-      <div className="text-center mt-10">
+      <div className="text-center mt-10 flex flex-wrap items-center justify-center gap-3">
         <a
           href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary"
         >
-          Get the Book $19.97
+          Get the PDF eBook — $19.97
         </a>
+        <SignedCopyCTA />
       </div>
     </div>
   </section>
