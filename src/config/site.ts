@@ -6,7 +6,7 @@ export type SiteConfig = {
 const DEFAULTS: SiteConfig = {
   metaPixelId: "26667882816208192",
   bookingUrl:
-    "https://api.leadconnectorhq.com/widget/bookings/insuranceandestates/barrybrooksby",
+    "https://api.leadconnectorhq.com/widget/booking/OSu3bsNSzuWuCVfLVZiZ",
 };
 
 const STORAGE_KEY = "retire-ten-vault:config-overrides";

@@ -1,6 +1,17 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { getSiteConfig } from "@/config/site";
+
+const FORM_EMBED_SRC = "https://link.msgsndr.com/js/form_embed.js";
+
+const ensureFormEmbedScript = () => {
+  if (typeof document === "undefined") return;
+  if (document.querySelector(`script[src="${FORM_EMBED_SRC}"]`)) return;
+  const script = document.createElement("script");
+  script.src = FORM_EMBED_SRC;
+  script.async = true;
+  document.body.appendChild(script);
+};
 
 type Props = {
   children: ReactNode;
@@ -8,6 +19,11 @@ type Props = {
 
 const BookingDialog = ({ children }: Props) => {
   const { bookingUrl } = getSiteConfig();
+
+  useEffect(() => {
+    ensureFormEmbedScript();
+  }, []);
+
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -18,6 +34,7 @@ const BookingDialog = ({ children }: Props) => {
           title="Book a strategy session with Barry Brooksby"
           className="w-full h-[85vh] max-h-[820px] border-0"
           loading="lazy"
+          scrolling="no"
         />
       </DialogContent>
     </Dialog>

@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import TopBar from "@/components/landing/TopBar";
 import Footer from "@/components/landing/Footer";
 import { getSiteConfig } from "@/config/site";
+
+const FORM_EMBED_SRC = "https://link.msgsndr.com/js/form_embed.js";
 
 const steps = [
   "A receipt and your download link are landing in your inbox right now. Check spam if you don't see it in a minute.",
@@ -11,6 +14,15 @@ const steps = [
 
 const BookThankYou = () => {
   const { bookingUrl } = getSiteConfig();
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    if (document.querySelector(`script[src="${FORM_EMBED_SRC}"]`)) return;
+    const script = document.createElement("script");
+    script.src = FORM_EMBED_SRC;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <main className="bg-background min-h-screen">
@@ -60,6 +72,7 @@ const BookThankYou = () => {
               title="Book a strategy session with Barry Brooksby"
               className="w-full h-[760px] border-0"
               loading="lazy"
+              scrolling="no"
             />
           </div>
 
