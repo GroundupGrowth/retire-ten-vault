@@ -70,9 +70,8 @@ const BookThankYou = () => {
             <iframe
               src={bookingUrl}
               title="Book a strategy session with Barry Brooksby"
-              className="w-full h-[760px] border-0"
+              className="w-full min-h-[760px] border-0"
               loading="lazy"
-              scrolling="no"
             />
           </div>
 
