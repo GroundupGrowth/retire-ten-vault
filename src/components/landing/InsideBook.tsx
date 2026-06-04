@@ -1,5 +1,6 @@
 import { BOOK_COVER_URL } from "@/assets/bookCover";
 import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
+import { EBOOK_PRODUCT, trackInitiateCheckout } from "@/lib/track";
 
 const bullets = [
   'Why "retire in 10 years" is a math number, not a marketing number and the exact conditions under which it works',
@@ -49,6 +50,7 @@ const InsideBook = () => (
               href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackInitiateCheckout(EBOOK_PRODUCT)}
               className="btn-primary"
             >
               Get the PDF eBook — $19.97

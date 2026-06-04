@@ -1,3 +1,5 @@
+import { SIGNED_COPY_PRODUCT, trackInitiateCheckout } from "@/lib/track";
+
 const SIGNED_COPY_URL = "https://focuswealthgroup.com/order1744162850420";
 
 type Props = {
@@ -22,6 +24,7 @@ const SignedCopyCTA = ({ variant = "secondary", className = "" }: Props) => {
       href={SIGNED_COPY_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackInitiateCheckout(SIGNED_COPY_PRODUCT)}
       className={cls}
       style={style}
     >

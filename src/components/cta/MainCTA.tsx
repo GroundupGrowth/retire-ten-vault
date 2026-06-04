@@ -1,4 +1,5 @@
 import BookingDialog from "@/components/booking/BookingDialog";
+import { EBOOK_PRODUCT, trackInitiateCheckout } from "@/lib/track";
 
 const FASTPAY_URL =
   "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d";
@@ -35,7 +36,13 @@ const MainCTA = ({
   }
 
   return (
-    <a href={FASTPAY_URL} target="_blank" rel="noopener noreferrer" className={cls}>
+    <a
+      href={FASTPAY_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => trackInitiateCheckout(EBOOK_PRODUCT)}
+      className={cls}
+    >
       {buyLabel}
     </a>
   );

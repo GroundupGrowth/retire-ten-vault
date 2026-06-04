@@ -1,4 +1,5 @@
 import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
+import { EBOOK_PRODUCT, trackInitiateCheckout } from "@/lib/track";
 
 const cards = [
   {
@@ -66,6 +67,7 @@ const BonusStack = () => (
           href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackInitiateCheckout(EBOOK_PRODUCT)}
           className="btn-primary"
         >
           Get the PDF eBook — $19.97

@@ -3,6 +3,7 @@ import { BOOK_COVER_PAPERBACK_URL } from "@/assets/bookCover";
 import MainCTA, { type CtaMode } from "@/components/cta/MainCTA";
 import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
 import TrustpilotWidget from "@/components/trust/TrustpilotWidget";
+import { EBOOK_PRODUCT, trackInitiateCheckout } from "@/lib/track";
 
 const FASTPAY_URL =
   "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d";
@@ -136,6 +137,7 @@ const Hero = ({ ctaMode = "buy" }: Props) => {
                 href={FASTPAY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackInitiateCheckout(EBOOK_PRODUCT)}
                 className="btn-secondary"
               >
                 Get the PDF eBook — $19.97
