@@ -18,12 +18,6 @@ const Book = () => {
     "@type": "Book",
     name: "Live Rich, Die Rich",
     author: { "@type": "Person", name: "Barry Brooksby" },
-    offers: {
-      "@type": "Offer",
-      price: "19.97",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-    },
     description:
       "A 17-year real estate investor's playbook for retiring in 10 years without the stock market, without a 401(k), and without waiting until 65.",
   };
@@ -35,7 +29,7 @@ const Book = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <TopBar />
-      <Hero ctaMode="buy" />
+      <Hero />
       <TwoPaths />
       <WhoFor />
       <Credibility />
@@ -45,7 +39,7 @@ const Book = () => {
       <StrategyCTA />
       <Objections />
       <TrustStrip eyebrow="Trusted by Real Readers" />
-      <FinalCTA ctaMode="buy" />
+      <FinalCTA />
       <Footer />
     </main>
   );

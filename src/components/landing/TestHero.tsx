@@ -1,4 +1,5 @@
 import { BOOK_COVER_URL } from "@/assets/bookCover";
+import MainCTA from "@/components/cta/MainCTA";
 
 const TestHero = () => (
   <section className="section bg-background">
@@ -30,18 +31,9 @@ const TestHero = () => (
       </div>
 
       <div className="text-center">
-        <a
-          href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary mb-4"
-        >
-          Get the Book $19.97
-        </a>
-
+        <MainCTA className="mb-4" />
         <p className="micro-trust max-w-[34rem] mx-auto">
-          Ships today as instant digital download. Print edition available at checkout.
-          17 years of real deals. Over 10,000 readers.
+          30 minutes with Barry. No pitch. No pressure. 17 years of real deals.
         </p>
       </div>
 

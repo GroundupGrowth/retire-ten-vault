@@ -50,9 +50,8 @@ export const stages: Record<StageKey, Stage> = {
     },
     relatedSlugs: ["why-the-4-percent-rule-wasnt-written-for-you"],
     primaryCta: {
-      label: "Get the Book $19.97",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
-      external: true,
+      label: "Book a Call with Barry",
+      href: "#book-call",
     },
     secondaryCta: { label: "Run your numbers →", to: "/tools/fire-calculator" },
   },
@@ -89,9 +88,8 @@ export const stages: Record<StageKey, Stage> = {
     },
     relatedSlugs: ["infrastructure-piece-most-investors-dont-see"],
     primaryCta: {
-      label: "Get the Book $19.97",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
-      external: true,
+      label: "Book a Call with Barry",
+      href: "#book-call",
     },
     secondaryCta: { label: "Run your numbers →", to: "/tools/fire-calculator" },
   },
@@ -135,8 +133,8 @@ export const stages: Record<StageKey, Stage> = {
       href: "#book-call",
     },
     secondaryCta: {
-      label: "Still want the book? Get it $19.97 →",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
+      label: "Read the Field Notes →",
+      to: "/blog",
     },
   },
 
@@ -179,8 +177,8 @@ export const stages: Record<StageKey, Stage> = {
       href: "#book-call",
     },
     secondaryCta: {
-      label: "Still want the book? Get it $19.97 →",
-      href: "https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d",
+      label: "Read the Field Notes →",
+      to: "/blog",
     },
   },
 
@@ -219,7 +217,7 @@ export const stages: Record<StageKey, Stage> = {
       label: "Book a Strategy Session",
       href: "#book-call",
     },
-    secondaryCta: { label: "Back to the book →", to: "/" },
+    secondaryCta: { label: "Back to home →", to: "/" },
   },
 };
 

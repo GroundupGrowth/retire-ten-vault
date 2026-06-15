@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Printer, RotateCcw } from "lucide-react";
 import TopBar from "@/components/landing/TopBar";
 import Footer from "@/components/landing/Footer";
+import MainCTA from "@/components/cta/MainCTA";
 
 const STORAGE_KEY = "retire-ten-vault:worksheet";
 
@@ -398,29 +399,13 @@ const Worksheet = () => {
           />
 
           <div className="bg-bg-elevated border border-rule rounded-[4px] p-6 md:p-8 mb-10 print:hidden">
-            <p className="eyebrow text-accent-primary mb-3">Want the Full Framework?</p>
+            <p className="eyebrow text-accent-primary mb-3">Want a Plan Built Around Your Numbers?</p>
             <p className="text-[15px] text-ink-secondary leading-relaxed mb-5">
-              This worksheet is the surface layer. The portfolio strategy, the infrastructure
-              piece, and the deal filter all live in <em>Live Rich, Die Rich</em>.
+              This worksheet is the surface layer. Book a call and run your actual numbers with
+              Barry — the portfolio strategy, the infrastructure piece, and the deal filter, applied
+              to your situation.
             </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                Get the PDF eBook — $19.97
-              </a>
-              <a
-                href="https://focuswealthgroup.com/order1744162850420"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                Get a Signed Copy — $33.95
-              </a>
-            </div>
+            <MainCTA />
           </div>
 
           <div className="pt-6 border-t border-rule print:hidden">

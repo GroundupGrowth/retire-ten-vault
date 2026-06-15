@@ -1,12 +1,7 @@
-import MainCTA, { type CtaMode } from "@/components/cta/MainCTA";
-import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
+import MainCTA from "@/components/cta/MainCTA";
 
-type Props = {
-  ctaMode?: CtaMode;
-};
-
-const FinalCTA = ({ ctaMode = "buy" }: Props) => (
-  <section id="checkout" className="section" style={{ background: "hsl(var(--accent-primary))" }}>
+const FinalCTA = () => (
+  <section id="book-call" className="section" style={{ background: "hsl(var(--accent-primary))" }}>
     <div className="container-prose text-center">
       <h2
         className="font-serif font-medium leading-tight mb-6"
@@ -25,18 +20,10 @@ const FinalCTA = ({ ctaMode = "buy" }: Props) => (
         The only question is what you own at the end of them.
       </p>
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        <MainCTA mode={ctaMode} variant="inverted" />
-        <SignedCopyCTA variant="inverted-outline" />
-      </div>
+      <MainCTA variant="inverted" />
 
-      <p
-        className="mt-5 text-sm"
-        style={{ color: "hsl(var(--background) / 0.7)" }}
-      >
-        {ctaMode === "call"
-          ? "30 minutes with Barry. PDF eBook for $19.97 or signed copy for $33.95."
-          : "Instant PDF download for $19.97 or signed physical copy for $33.95."}
+      <p className="mt-5 text-sm" style={{ color: "hsl(var(--background) / 0.7)" }}>
+        30 minutes with Barry. No pitch. No pressure.
       </p>
     </div>
   </section>

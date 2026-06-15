@@ -1,10 +1,9 @@
-import SignedCopyCTA from "@/components/cta/SignedCopyCTA";
-import { EBOOK_PRODUCT, trackInitiateCheckout } from "@/lib/track";
+import MainCTA from "@/components/cta/MainCTA";
 
 const cards = [
   {
     n: "01",
-    title: "The Book Live Rich, Die Rich",
+    title: "The Book — Live Rich, Die Rich",
     desc: "The full 17-year playbook, in print or digital.",
     value: "$33.95",
   },
@@ -26,8 +25,8 @@ const BonusStack = () => (
   <section className="section bg-bg-elevated">
     <div className="container-page">
       <div className="text-center mb-14">
-        <p className="eyebrow mb-6">Included With the Book</p>
-        <h2 className="h2-display">What You Get at $19.97</h2>
+        <p className="eyebrow mb-6">What's In Barry's System</p>
+        <h2 className="h2-display">Everything You'll Walk Through Together</h2>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
@@ -51,28 +50,12 @@ const BonusStack = () => (
         ))}
       </div>
 
-      <div className="mt-14 max-w-xl mx-auto bg-background border border-rule rounded-[4px] p-6 md:p-8 text-center">
-        <div className="flex items-baseline justify-center gap-3 mb-2">
-          <span className="stat-label text-ink-muted">Total value</span>
-          <span className="font-serif text-xl text-ink-muted line-through decoration-ink-muted/60">$730</span>
-        </div>
-        <div className="flex items-baseline justify-center gap-2">
-          <span className="stat-label text-accent-primary">Yours today for</span>
-          <span className="font-serif text-3xl md:text-4xl font-semibold text-accent-primary">$19.97</span>
-        </div>
-      </div>
+      <p className="pull-quote text-center mt-14 text-xl md:text-2xl text-ink-secondary">
+        Over $730 of frameworks and tools — and a plan built around your actual numbers.
+      </p>
 
-      <div className="text-center mt-10 flex flex-wrap items-center justify-center gap-3">
-        <a
-          href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackInitiateCheckout(EBOOK_PRODUCT)}
-          className="btn-primary"
-        >
-          Get the PDF eBook — $19.97
-        </a>
-        <SignedCopyCTA />
+      <div className="text-center mt-10">
+        <MainCTA />
       </div>
     </div>
   </section>

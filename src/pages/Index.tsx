@@ -15,7 +15,7 @@ import TrustStrip from "@/components/trust/TrustStrip";
 const Index = () => (
   <main className="bg-background">
     <TopBar />
-    <Hero ctaMode="call" />
+    <Hero />
     <TwoPaths />
     <WhoFor />
     <Credibility />
@@ -25,7 +25,7 @@ const Index = () => (
     <StrategyCTA />
     <Objections />
     <TrustStrip eyebrow="Trusted by Real Readers" />
-    <FinalCTA ctaMode="call" />
+    <FinalCTA />
     <Footer />
   </main>
 );

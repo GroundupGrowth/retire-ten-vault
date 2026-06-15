@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import MainCTA from "@/components/cta/MainCTA";
 
 export type BlogPost = {
   slug: string;
@@ -13,22 +14,15 @@ export type BlogPost = {
 
 const BookCTA = () => (
   <div className="mt-12 bg-bg-elevated border border-rule border-t-[3px] border-t-accent-primary rounded-[4px] p-7 md:p-10">
-    <p className="eyebrow text-accent-primary mb-3">The Full Playbook</p>
+    <p className="eyebrow text-accent-primary mb-3">Talk It Through</p>
     <h3 className="font-serif text-xl md:text-2xl font-medium text-foreground mb-3 leading-snug">
-      Want the framework this post is built on?
+      Want this applied to your actual numbers?
     </h3>
     <p className="text-ink-secondary text-[16px] leading-relaxed mb-6">
-      <em>Live Rich, Die Rich</em> is Barry's 17-year playbook for retiring in 10 years — the
-      portfolio, the framework, and the infrastructure piece nobody told you about.
+      Book a call with Barry — 17 years of real deals, the portfolio, the framework, and the
+      infrastructure piece nobody told you about, mapped to your situation.
     </p>
-    <a
-      href="https://link.fastpaydirect.com/payment-link/69e6335e7dd3512d9207788d"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn-primary"
-    >
-      Get the Book $19.97
-    </a>
+    <MainCTA />
   </div>
 );
 
